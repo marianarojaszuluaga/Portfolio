@@ -1,13 +1,12 @@
 import Nav from './components/Nav'
+import Hero from './components/Hero'
 
 export default function App() {
   return (
     <div className="min-h-screen bg-bg text-text">
       <Nav />
       <main>
-        <section id="hero" className="min-h-screen flex items-center justify-center pt-20">
-          <p className="text-text-muted">Hero — próximo paso</p>
-        </section>
+        <Hero />
         <section id="about" className="min-h-screen flex items-center justify-center">
           <p className="text-text-muted">About — próximo paso</p>
         </section>
