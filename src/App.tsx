@@ -1,6 +1,7 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import About from './components/About'
+import Projects from './components/Projects'
 
 export default function App() {
   return (
@@ -9,9 +10,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <section id="projects" className="min-h-screen flex items-center justify-center">
-          <p className="text-text-muted">Projects — próximo paso</p>
-        </section>
+        <Projects />
         <section id="education" className="min-h-screen flex items-center justify-center">
           <p className="text-text-muted">Education — próximo paso</p>
         </section>
