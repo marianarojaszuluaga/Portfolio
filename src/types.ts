@@ -24,10 +24,25 @@ export interface Education {
   relevance?: string
 }
 
+export interface Experience {
+  role: string
+  company: string
+  period: string
+  location: string
+  description: string
+  highlight?: boolean
+}
+
 export interface Profile {
   name: string
+  displayName: string
   tagline: string
+  bio: string
   about: string
   email: string
+  phone: string
+  location: string
   linkedin: string
+  calendar?: string
+  blog?: string
 }

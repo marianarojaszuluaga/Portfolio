@@ -12,8 +12,8 @@ export default function ProjectCard({ project, onClick, index }: Props) {
   const color = categoryColors[project.category]
   return (
     <motion.button
-      className="text-left w-full rounded-xl p-6 transition-all duration-200 hover:scale-[1.02] cursor-pointer border border-transparent hover:border-surface-2"
-      style={{ backgroundColor: 'var(--surface)' }}
+      className="text-left w-full rounded-xl p-6 transition-all duration-200 hover:scale-[1.02] cursor-pointer"
+      style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)' }}
       onClick={() => onClick(project)}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}

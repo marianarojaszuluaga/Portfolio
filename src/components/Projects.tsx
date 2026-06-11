@@ -17,14 +17,20 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 bg-bg">
       <div className="max-w-6xl mx-auto px-6" ref={ref}>
+        <motion.p
+          className="section-label mb-3"
+          initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.4 }}
+        >
+          03 — Projects
+        </motion.p>
         <motion.h2
-          className="font-heading font-bold text-3xl md:text-4xl mb-12"
-          style={{ color: 'var(--accent-2)' }}
+          className="font-display font-extrabold mb-12"
+          style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', color: 'var(--text)' }}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Lo que he construido
+          What I've <span className="grad-cyan">built.</span>
         </motion.h2>
         <div className="flex flex-wrap gap-2 mb-10">
           {categories.map((cat) => {

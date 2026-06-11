@@ -15,6 +15,7 @@ export default {
         'text-muted': 'var(--text-muted)',
       },
       fontFamily: {
+        display: ['Syne', 'sans-serif'],
         heading: ['Space Grotesk', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],

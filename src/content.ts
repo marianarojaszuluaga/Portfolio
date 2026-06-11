@@ -1,20 +1,113 @@
-import type { Profile, Project, Education } from './types'
+import type { Profile, Project, Education, Experience } from './types'
 
 export const profile: Profile = {
   name: 'Mariana Rojas Zuluaga',
-  tagline: 'Encuentro lo que está roto. Lo diseño mejor. Y lo pongo a funcionar.',
+  displayName: 'Mar.',
+  tagline: 'I solve human problems with tech through an ethical approach.',
+  bio: `¡Hola! They call me Mar.
+
+Political Science graduate, passionate about technology and the humans behind everyday operations. I have two girl dogs who are the best part of my life.
+
+I'm an impact-oriented Manager with 5+ years of experience leading cross-functional teams and delivering digital products and operational initiatives from concept to execution. Strong ability to translate business goals into structured roadmaps, align stakeholders, and drive delivery in fast-paced environments.
+
+Known for combining strategic thinking with hands-on execution to improve product adoption, operational efficiency, and team performance. Experienced working at the intersection of product, operations, and strategy — helping organizations move from ideas to scalable solutions.`,
   about: `Hay una pregunta que no puedo apagar: ¿por qué esto funciona así si podría funcionar mejor?
 
 No es inquietud por la inquietud. Es que la mayoría de los sistemas —los procesos, los flujos, las herramientas— se construyeron para un problema que ya no existe, y nadie se detuvo a cuestionarlo. Yo sí me detengo.
 
 Mi forma de trabajar mezcla tres cosas que rara vez están juntas en la misma persona: entiendo la operación (dónde duele, dónde se pierde tiempo, dónde la gente toma decisiones con información incompleta), pienso en producto (qué se construye, para quién, con qué lógica), y uso IA no como hype sino como herramienta real para quitar trabajo repetitivo y devolverle a la gente tiempo para pensar.
 
-Itero rápido. Prototipo antes de escribir el spec perfecto. Prefiero tener algo funcionando en la operación real que una propuesta impecable que nunca llega a producción.
-
-Trabajo mejor con equipos que también tienen esa obsesión — los que construyen porque quieren que las cosas funcionen de verdad, no porque hay un roadmap que cumplir.`,
-  email: 'mariana.rojas@imagineapps.co',
+Itero rápido. Prototipo antes de escribir el spec perfecto. Prefiero tener algo funcionando en la operación real que una propuesta impecable que nunca llega a producción.`,
+  email: 'rojaszuluagamariana@gmail.com',
+  phone: '3124821769',
+  location: 'Colombia — working anywhere remote',
   linkedin: 'https://www.linkedin.com/in/mariana-rojas-zuluaga/',
 }
+
+export const skills: string[] = [
+  'Strategic Leadership',
+  'Product Management',
+  'Operations Design',
+  'AI Tools & Automation',
+  'Stakeholder Alignment',
+  'Roadmap Planning',
+  'Cross-functional Teams',
+  'Sprint Planning',
+  'Process Improvement',
+  'Digital Transformation',
+]
+
+export const languages = [
+  { lang: 'English', flag: '🇬🇧', level: 'C2 Advanced / Native' },
+  { lang: 'Spanish', flag: '🇨🇴', level: 'Native (mother tongue)' },
+  { lang: 'French', flag: '🇫🇷', level: 'Intermediate' },
+]
+
+export const experience: Experience[] = [
+  {
+    role: 'Strategic Product & Operations Manager',
+    company: 'Imagine Apps',
+    period: 'Dec 2025 → Present',
+    location: 'Remote',
+    description:
+      'Lead product execution and operational coordination for digital initiatives, aligning business objectives with product development and delivery teams.',
+    highlight: true,
+  },
+  {
+    role: 'Full-Time Lecturer',
+    company: 'Universidad Nacional Abierta y a Distancia (UNAD)',
+    period: 'Oct 2024 → Present',
+    location: 'Colombia',
+    description:
+      'Manage academic programs and guide large student groups through structured learning processes and project-based activities.',
+  },
+  {
+    role: 'Strategic Product & Operations Manager',
+    company: 'Imagine Apps',
+    period: 'Feb 2025 → Dec 2025',
+    location: 'Remote',
+    description:
+      'Lead product execution and operational coordination for digital initiatives, aligning business objectives with product development and delivery teams.',
+  },
+  {
+    role: 'Product Owner & Business Development Lead',
+    company: 'Elentari Venture',
+    period: 'Aug 2023 → Oct 2024',
+    location: 'Remote',
+    description:
+      'Owned product roadmap and coordinated product development teams across international environments.',
+  },
+  {
+    role: 'Chief of Operations (Volunteer)',
+    company: 'La Oficina — Nonprofit',
+    period: 'Jan 2023 → Jan 2025',
+    location: 'Colombia',
+    description:
+      'Led operational initiatives and implemented project management frameworks to improve organizational efficiency.',
+  },
+  {
+    role: 'IT Project Manager',
+    company: 'Imagine Apps',
+    period: 'Nov 2022 → Sep 2023',
+    location: 'Remote',
+    description:
+      'Managed distributed development teams delivering web and mobile solutions and coordinated sprint planning and delivery cycles.',
+  },
+  {
+    role: 'Operations & Business Development Lead',
+    company: 'Miami Image LLC',
+    period: 'Mar 2021 → Nov 2021',
+    location: 'Remote',
+    description: 'Supported operational scaling initiatives and internal process improvements.',
+  },
+]
+
+export const additionalExperience: string[] = [
+  'Teleperformance — Global Impact Back-Office Advisor',
+  'Buho Media — Information Analyst',
+  'Talent for the Future — National Director Colombia',
+  'Congress of Colombia — Research & Communications Assistant',
+]
 
 export const projects: Project[] = [
   {
@@ -71,7 +164,38 @@ export const projects: Project[] = [
   },
 ]
 
-export const education: Education[] = []
+export const education: Education[] = [
+  {
+    title: 'Post Graduate — Internal Communication & Strategic Management',
+    institution: 'Pontificia Universidad Javeriana',
+    period: 'Jun 2014 → May 2019',
+    relevance: 'Strategic communication, organizational culture, leadership communication frameworks.',
+  },
+  {
+    title: 'Post Graduate — Professional Project Manager',
+    institution: 'AMG',
+    period: 'May 2026 → Jun 2026',
+    relevance: 'Advanced project management methodologies and professional certification.',
+  },
+  {
+    title: 'Master in Marketing and Political Communication',
+    institution: 'Universidad de Alcalá de Henares',
+    period: 'Sep 2019 → Jun 2020',
+    relevance: 'Political communication strategies, marketing frameworks, and stakeholder engagement.',
+  },
+  {
+    title: 'Postgraduate in Political Marketing and Communication',
+    institution: 'Universidad del Rosario',
+    period: 'May 2018 → Jun 2018',
+    relevance: 'Specialized training in political marketing and communication strategy.',
+  },
+  {
+    title: "Bachelor's in Political Science",
+    institution: 'Pontificia Universidad Javeriana',
+    period: 'Jun 2014 → May 2019',
+    relevance: 'Foundation in political theory, public policy, governance, and social systems.',
+  },
+]
 
 export const categoryLabels: Record<string, string> = {
   'imagine-apps': 'Imagine Apps',
