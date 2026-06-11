@@ -1,3 +1,26 @@
+import Nav from './components/Nav'
+
 export default function App() {
-  return <div className="min-h-screen bg-bg text-text"><p>Portfolio</p></div>
+  return (
+    <div className="min-h-screen bg-bg text-text">
+      <Nav />
+      <main>
+        <section id="hero" className="min-h-screen flex items-center justify-center pt-20">
+          <p className="text-text-muted">Hero — próximo paso</p>
+        </section>
+        <section id="about" className="min-h-screen flex items-center justify-center">
+          <p className="text-text-muted">About — próximo paso</p>
+        </section>
+        <section id="projects" className="min-h-screen flex items-center justify-center">
+          <p className="text-text-muted">Projects — próximo paso</p>
+        </section>
+        <section id="education" className="min-h-screen flex items-center justify-center">
+          <p className="text-text-muted">Education — próximo paso</p>
+        </section>
+        <section id="contact" className="min-h-screen flex items-center justify-center">
+          <p className="text-text-muted">Contact — próximo paso</p>
+        </section>
+      </main>
+    </div>
+  )
 }
