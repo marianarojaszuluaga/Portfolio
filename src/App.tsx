@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Projects from './components/Projects'
 import Education from './components/Education'
+import Contact from './components/Contact'
 
 export default function App() {
   return (
@@ -13,9 +14,7 @@ export default function App() {
         <About />
         <Projects />
         <Education />
-        <section id="contact" className="min-h-screen flex items-center justify-center">
-          <p className="text-text-muted">Contact — próximo paso</p>
-        </section>
+        <Contact />
       </main>
     </div>
   )
