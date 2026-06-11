@@ -1,5 +1,6 @@
 import Nav from './components/Nav'
 import Hero from './components/Hero'
+import About from './components/About'
 
 export default function App() {
   return (
@@ -7,9 +8,7 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <section id="about" className="min-h-screen flex items-center justify-center">
-          <p className="text-text-muted">About — próximo paso</p>
-        </section>
+        <About />
         <section id="projects" className="min-h-screen flex items-center justify-center">
           <p className="text-text-muted">Projects — próximo paso</p>
         </section>
