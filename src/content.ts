@@ -2,15 +2,15 @@ import type { Profile, Project, Education, Experience } from './types'
 
 export const profile: Profile = {
   name: 'Mariana Rojas Zuluaga',
-  displayName: 'Mar.',
+  displayName: 'Mar',
   tagline: 'I solve human problems with tech through an ethical approach.',
   bio: `¡Hola! They call me Mar.
 
-Political Science graduate, passionate about technology and the humans behind everyday operations. I have two girl dogs who are the best part of my life.
+Political Science graduate, passionate about technology and the human problems hiding inside everyday operations. I have two girl dogs who are the best part of my life.
 
-I'm an impact-oriented Manager with 5+ years of experience leading cross-functional teams and delivering digital products and operational initiatives from concept to execution. Strong ability to translate business goals into structured roadmaps, align stakeholders, and drive delivery in fast-paced environments.
+I'm an operator who thinks strategically. For 5+ years I've owned product and operational initiatives end-to-end — from the first conversation to the system running in production. My job is reducing ambiguity, creating alignment, and turning ideas into something teams can actually run on.
 
-Known for combining strategic thinking with hands-on execution to improve product adoption, operational efficiency, and team performance. Experienced working at the intersection of product, operations, and strategy — helping organizations move from ideas to scalable solutions.`,
+I care about people, and I show that through structure and clarity, not slogans.`,
   about: `Hay una pregunta que no puedo apagar: ¿por qué esto funciona así si podría funcionar mejor?
 
 No es inquietud por la inquietud. Es que la mayoría de los sistemas —los procesos, los flujos, las herramientas— se construyeron para un problema que ya no existe, y nadie se detuvo a cuestionarlo. Yo sí me detengo.
@@ -38,19 +38,19 @@ export const skills: string[] = [
 ]
 
 export const languages = [
-  { lang: 'English', flag: '🇬🇧', level: 'C2 Advanced / Native' },
-  { lang: 'Spanish', flag: '🇨🇴', level: 'Native (mother tongue)' },
-  { lang: 'French', flag: '🇫🇷', level: 'Intermediate' },
+  { lang: 'English', code: 'gb', level: 'C2 Advanced / Native' },
+  { lang: 'Spanish', code: 'co', level: 'Native (mother tongue)' },
+  { lang: 'French', code: 'fr', level: 'Intermediate' },
 ]
 
 export const experience: Experience[] = [
   {
-    role: 'Strategic Product & Operations Manager',
+    role: 'Strategic Product & Operations Lead',
     company: 'Imagine Apps',
-    period: 'Dec 2025 → Present',
+    period: 'Feb 2025 → Present',
     location: 'Remote',
     description:
-      'Lead product execution and operational coordination for digital initiatives, aligning business objectives with product development and delivery teams.',
+      'Take leadership objectives and turn them into roadmaps teams can actually run. Own incident response end-to-end — when a client-facing backend incident hit, I ran discovery, defined the fix, and presented the methodology change directly to the client as their single point of contact. Built and lead Agent Hub (10+ AI agents), authored the Imagine Apps Ecosystem internal reference, and built the Learning Hub for company onboarding.',
     highlight: true,
   },
   {
@@ -62,20 +62,12 @@ export const experience: Experience[] = [
       'Manage academic programs and guide large student groups through structured learning processes and project-based activities.',
   },
   {
-    role: 'Strategic Product & Operations Manager',
-    company: 'Imagine Apps',
-    period: 'Feb 2025 → Dec 2025',
-    location: 'Remote',
-    description:
-      'Lead product execution and operational coordination for digital initiatives, aligning business objectives with product development and delivery teams.',
-  },
-  {
     role: 'Product Owner & Business Development Lead',
     company: 'Elentari Venture',
     period: 'Aug 2023 → Oct 2024',
     location: 'Remote',
     description:
-      'Owned product roadmap and coordinated product development teams across international environments.',
+      'Owned the product roadmap for a distributed international team. Led the daily negotiation between what the business needed and what engineering could realistically ship. Ran requirements conversations directly with stakeholders — no relay, no telephone game.',
   },
   {
     role: 'Chief of Operations (Volunteer)',
@@ -83,7 +75,7 @@ export const experience: Experience[] = [
     period: 'Jan 2023 → Jan 2025',
     location: 'Colombia',
     description:
-      'Led operational initiatives and implemented project management frameworks to improve organizational efficiency.',
+      "This organization didn't have a project management framework — I built one, along with the KPI tracking to know if it was actually working.",
   },
   {
     role: 'IT Project Manager',
@@ -91,14 +83,14 @@ export const experience: Experience[] = [
     period: 'Nov 2022 → Sep 2023',
     location: 'Remote',
     description:
-      'Managed distributed development teams delivering web and mobile solutions and coordinated sprint planning and delivery cycles.',
+      'Managed distributed teams delivering web and mobile products across time zones. Owned sprint planning, backlog, risk and dependency tracking. When something was about to break, I wanted to know before the client did.',
   },
   {
     role: 'Operations & Business Development Lead',
     company: 'Miami Image LLC',
     period: 'Mar 2021 → Nov 2021',
     location: 'Remote',
-    description: 'Supported operational scaling initiatives and internal process improvements.',
+    description: 'Supported operational scaling and internal process improvements for a remote-first organization.',
   },
 ]
 
@@ -110,6 +102,32 @@ export const additionalExperience: string[] = [
 ]
 
 export const projects: Project[] = [
+  {
+    id: 'agent-hub',
+    title: 'Agent Hub — Friction Reduction AI Agent Interface',
+    category: 'imagine-apps',
+    period: '2025',
+    problem:
+      'El cuello de botella no era construir agentes de IA — era que las personas no técnicas no podían acceder a ellos sin fricción. La tecnología existía; la interfaz humana, no.',
+    built:
+      'Definí la visión del producto, construí y curé más de 10 agentes, y diseñé una interfaz que elimina la fricción de acceso para usuarios no técnicos. Lideré el backlog completo y llevé el proyecto a pitch externo.',
+    impact:
+      'De herramienta interna a propuesta con potencial comercial. Agent Hub cambió la conversación de "tenemos agentes" a "cualquiera puede usarlos".',
+    stack: ['IA Generativa', 'Product Management', 'UX', 'Automatización'],
+  },
+  {
+    id: 'imagine-apps-ecosystem',
+    title: 'Imagine Apps Ecosystem — Internal Knowledge System',
+    category: 'imagine-apps',
+    period: '2025',
+    problem:
+      'Las organizaciones se rompen cuando el conocimiento vive en la cabeza de las personas en lugar de en sistemas. Cada salida es una pérdida de memoria institucional.',
+    built:
+      'Sistema integral que centraliza todo el conocimiento operativo de Imagine Apps: Agents Hub, Ops Hub y Learning Hub. Incluye metodología, suite de agentes de IA, formatos operacionales, guías, políticas y sistema de diseño UI. Una sola fuente de verdad construida para sobrevivir a cualquier individuo.',
+    impact:
+      'La empresa dejó de depender de personas específicas para funcionar. El conocimiento se volvió transferible, escalable y auditable.',
+    stack: ['Knowledge Management', 'IA', 'Diseño de Sistemas', 'Documentación'],
+  },
   {
     id: 'finanz-butik-helpdesk',
     title: 'Finanz Butik Helpdesk',
@@ -161,6 +179,71 @@ export const projects: Project[] = [
     impact:
       'Nueva fuente única de verdad para estados globales. Habilitó alineación de prioridades transparente con stakeholders basada en datos históricos.',
     stack: ['Dashboards', 'Métricas', 'Gestión de Operaciones'],
+  },
+  {
+    id: 'ai-wiki-for-builders',
+    title: 'AI Wiki for Builders',
+    category: 'ia',
+    period: '2025',
+    problem:
+      'Las personas que empiezan a usar IA para construir productos no necesitan otro tutorial — necesitan herramientas listas para resolver problemas reales, ahora.',
+    built:
+      'Colección curada de skills, agentes y estructuras agénticas diseñadas para resolver problemas en tiempo real. Cada recurso fue probado antes de incluirse.',
+    impact:
+      'Recurso independiente para builders que prefieren aprender haciendo. Reduce la curva de entrada de semanas a horas.',
+    stack: ['IA Generativa', 'Automatización', 'Curaduría'],
+  },
+  {
+    id: 'mujeres-builders',
+    title: 'Mujeres Builders — Women-in-Tech Community',
+    category: 'emprendimiento',
+    period: '2025',
+    problem:
+      'La comunidad tenía volumen de contenido pero no identidad. El problema real no era la cantidad de publicaciones — era que las mujeres no estaban co-creando, solo consumiendo.',
+    built:
+      'Base de datos de 28 herramientas de IA organizada para la comunidad. Marco estratégico de contenido y engagement centrado en identidad compartida y co-creación, no en métricas de visibilidad.',
+    impact:
+      'Red activa de 100+ mujeres que colaboran y construyen. La comunidad pasó de audiencia a equipo.',
+    stack: ['Community Building', 'Estrategia de Contenido', 'IA'],
+  },
+  {
+    id: 'speaker-ai-summit',
+    title: 'Speaker — AI Summit',
+    category: 'imagine-apps',
+    period: '2025',
+    problem:
+      'Las empresas querían implementar IA pero confundían la herramienta con la estrategia. El problema no era acceso a tecnología — era saber qué construir con ella.',
+    built:
+      'Master Class de implementación de IA para organizaciones de distintas industrias, en conjunto con Imagine Apps y 30X. Diseñada para ejecutivos y líderes, no para equipos técnicos.',
+    impact:
+      'Audiencia de empresas con casos de uso concretos y un framework para evaluar dónde tiene sentido implementar IA en sus operaciones.',
+    stack: ['Comunicación Estratégica', 'IA', 'Formación Ejecutiva'],
+  },
+  {
+    id: 'finanz-butik-release-notes',
+    title: 'Finanz Butik — Release Notes & Product Communication',
+    category: 'imagine-apps',
+    period: '2025 – 2026',
+    problem:
+      'El cliente llegaba a las ceremonias Scrum con preguntas, no con criterio. Los cambios técnicos eran opacos para una audiencia no técnica, lo que convertía el sprint review en un interrogatorio en lugar de una revisión.',
+    built:
+      'Decks de release notes que traducen cambios técnicos al lenguaje del negocio — sin simplificar, sin omitir. Cada entrega está diseñada para que el cliente entienda el incremento y llegue a la ceremonia con una postura crítica.',
+    impact:
+      'El cliente pasó de hacer preguntas a hacer observaciones. Las ceremonias se volvieron conversaciones estratégicas, no sesiones de explicación.',
+    stack: ['Comunicación de Producto', 'Product Writing', 'Scrum'],
+  },
+  {
+    id: 'growth-plan',
+    title: 'Growth Plan — Structured Professional Development',
+    category: 'intentos',
+    period: '2022 – 2025',
+    problem:
+      'El crecimiento profesional sin estructura se convierte en reactividad — se aprende lo urgente, no lo estratégico. Sin una ruta, se avanza en círculos.',
+    built:
+      'Plan de desarrollo personal y profesional con prioridades de upskilling y trayectoria de carrera, construido con mentoría profesional durante los años en Imagine Apps. Incluye mapa de habilidades, objetivos por ciclo y métricas de avance.',
+    impact:
+      'Trayectoria de PM a Strategic Lead con base en decisiones deliberadas, no en oportunidades accidentales. Un sistema propio de crecimiento que sigue activo.',
+    stack: ['Desarrollo Profesional', 'Mentoría', 'Planificación Estratégica'],
   },
 ]
 

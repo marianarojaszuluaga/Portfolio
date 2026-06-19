@@ -1,39 +1,7 @@
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { profile } from '../content'
-
-const contactItems = [
-  {
-    label: 'Email',
-    value: 'rojaszuluagamariana@gmail.com',
-    href: 'mailto:rojaszuluagamariana@gmail.com',
-    icon: '✉️',
-    copyable: true,
-  },
-  {
-    label: 'Phone',
-    value: '3124821769',
-    href: 'tel:+573124821769',
-    icon: '📞',
-    copyable: false,
-  },
-  {
-    label: 'Location',
-    value: 'Colombia — remote worldwide',
-    href: undefined,
-    icon: '📍',
-    copyable: false,
-  },
-]
-
-const connectItems = [
-  {
-    label: 'LinkedIn',
-    href: profile.linkedin,
-    icon: '🔗',
-    cta: "Let's connect",
-  },
-]
+import { ContactIcon } from './Icons'
 
 export default function Contact() {
   const [copied, setCopied] = useState(false)
@@ -41,7 +9,7 @@ export default function Contact() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   const copyEmail = async () => {
-    await navigator.clipboard.writeText('rojaszuluagamariana@gmail.com')
+    await navigator.clipboard.writeText(profile.email)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
@@ -49,127 +17,127 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-28 relative overflow-hidden"
-      style={{ backgroundColor: 'var(--bg)' }}
+      className="relative overflow-hidden py-28"
+      style={{ backgroundColor: 'var(--pink)' }}
     >
-      {/* glow */}
-      <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full opacity-10 blur-3xl pointer-events-none"
-        style={{ backgroundColor: 'var(--accent-1)' }}
-      />
+      {/* checker strip top */}
+      <div className="checker-pink w-full h-5 absolute top-0 left-0 opacity-30" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10" ref={ref}>
+      {/* blobs */}
+      <div className="absolute blob-1 pointer-events-none" style={{ width: 300, height: 280, backgroundColor: 'rgba(255,255,255,0.08)', top: -80, right: -60 }} />
+      <div className="absolute blob-2 pointer-events-none" style={{ width: 200, height: 180, backgroundColor: 'rgba(255,255,255,0.06)', bottom: -40, left: -40 }} />
+
+      {/* sparkles */}
+      <motion.svg className="absolute top-16 left-10 opacity-40" width="28" height="28" viewBox="0 0 24 24" fill="var(--lime)"
+        animate={{ rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}>
+        <path d="M12 2L13.09 8.26L19 6L14.74 10.74L21 12L14.74 13.26L19 18L13.09 15.74L12 22L10.91 15.74L5 18L9.26 13.26L3 12L9.26 10.74L5 6L10.91 8.26L12 2Z"/>
+      </motion.svg>
+      <motion.svg className="absolute bottom-20 right-12 opacity-30" width="36" height="36" viewBox="0 0 24 24" fill="#fff"
+        animate={{ rotate: -360 }} transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}>
+        <path d="M12 2L13.09 8.26L19 6L14.74 10.74L21 12L14.74 13.26L19 18L13.09 15.74L12 22L10.91 15.74L5 18L9.26 13.26L3 12L9.26 10.74L5 6L10.91 8.26L12 2Z"/>
+      </motion.svg>
+
+      <div className="max-w-5xl mx-auto px-6 text-center relative z-10" ref={ref}>
         <motion.p
-          className="section-label mb-3"
-          initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.4 }}
+          className="section-label mb-5"
+          style={{ color: 'rgba(255,255,255,0.7)' }}
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
         >
           05 — Contact
         </motion.p>
+
         <motion.h2
-          className="font-display font-extrabold mb-6"
-          style={{ fontSize: 'clamp(2.5rem, 7vw, 5rem)', lineHeight: 1.05 }}
-          initial={{ opacity: 0, y: 24 }}
+          className="font-display font-bold leading-none mb-6"
+          style={{ fontSize: 'clamp(3rem, 9vw, 7rem)', color: '#fff', letterSpacing: '-0.02em' }}
+          initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.55, delay: 0.1 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Building something
+          Let's make
           <br />
-          that should work <span className="grad-orange">better?</span>
+          something{' '}
+          <span style={{ color: 'var(--lime)' }}>great.</span> ✦
         </motion.h2>
 
         <motion.p
-          className="text-lg mb-16 max-w-xl"
-          style={{ color: 'var(--text-muted)' }}
-          initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.25 }}
+          className="font-heading text-lg mb-12 max-w-lg mx-auto"
+          style={{ color: 'rgba(255,255,255,0.85)' }}
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.3 }}
         >
-          I'd love to hear about it. Write to me — I respond to every message.
+          I'm open to new projects, collabs, and conversations.
+          Write to me — I respond to everything.
         </motion.p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* contact details */}
-          <motion.div
-            className="space-y-4"
-            initial={{ opacity: 0, x: -20 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.3 }}
+        {/* big email CTA */}
+        <motion.div
+          className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <a
+            href={`mailto:${profile.email}`}
+            className="pill-btn pill-btn-lime text-lg px-10 py-4"
           >
-            <p className="section-label mb-5">Reach me</p>
-            {contactItems.map((item) => (
-              <div
-                key={item.label}
-                className="flex items-center gap-4 p-4 rounded-xl"
-                style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)' }}
-              >
-                <span className="text-xl">{item.icon}</span>
-                <div className="flex-1 min-w-0">
-                  <p className="text-xs font-mono mb-0.5" style={{ color: 'var(--text-muted)' }}>{item.label}</p>
-                  {item.href ? (
-                    <a
-                      href={item.href}
-                      className="font-heading font-bold text-sm hover:underline truncate block"
-                      style={{ color: 'var(--text)' }}
-                    >
-                      {item.value}
-                    </a>
-                  ) : (
-                    <span className="font-heading font-bold text-sm" style={{ color: 'var(--text)' }}>
-                      {item.value}
-                    </span>
-                  )}
-                </div>
-                {item.copyable && (
-                  <button
-                    onClick={copyEmail}
-                    className="text-xs font-mono px-3 py-1.5 rounded-md transition-all hover:scale-105"
-                    style={{ backgroundColor: copied ? 'rgba(184,255,87,0.15)' : 'var(--surface-2)', color: copied ? 'var(--accent-3)' : 'var(--text-muted)' }}
-                  >
-                    {copied ? '✓ copied' : 'copy'}
-                  </button>
-                )}
+            Send me an email
+          </a>
+          <button
+            onClick={copyEmail}
+            className="pill-btn pill-btn-white text-sm"
+          >
+            {copied ? '✓ Copied!' : 'Copy email'}
+          </button>
+        </motion.div>
+
+        {/* contact cards */}
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          {[
+            { iconType: 'location', label: 'Location', value: 'Colombia · Remote' },
+            { iconType: 'phone', label: 'Phone', value: profile.phone },
+            { iconType: 'link', label: 'LinkedIn', value: "Let's connect", href: profile.linkedin },
+          ].map(({ iconType, label, value, href }) => (
+            <div
+              key={label}
+              className="sticker-card p-4 text-center"
+              style={{ backgroundColor: 'rgba(255,255,255,0.95)' }}
+            >
+              <div className="flex items-center justify-center mb-1 text-2xl" style={{ color: 'var(--pink)' }}>
+                <ContactIcon type={iconType as any} size={22} color="var(--pink)" />
               </div>
-            ))}
-          </motion.div>
-
-          {/* connect */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <p className="section-label mb-5">Connect</p>
-            <div className="space-y-4">
-              {connectItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between p-5 rounded-xl group transition-all duration-200 hover:scale-[1.02]"
-                  style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)' }}
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="text-xl">{item.icon}</span>
-                    <div>
-                      <p className="font-heading font-bold" style={{ color: 'var(--text)' }}>{item.label}</p>
-                      <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>{item.cta}</p>
-                    </div>
-                  </div>
-                  <span className="text-lg group-hover:translate-x-1 transition-transform" style={{ color: 'var(--accent-1)' }}>→</span>
+              <div className="font-mono text-xs mb-1" style={{ color: 'var(--text-muted)' }}>{label}</div>
+              {href ? (
+                <a href={href} target="_blank" rel="noopener noreferrer" className="font-heading font-bold text-sm hover:underline" style={{ color: 'var(--pink)' }}>
+                  {value}
                 </a>
-              ))}
-
-              {/* primary CTA */}
-              <a
-                href="mailto:rojaszuluagamariana@gmail.com"
-                className="flex items-center justify-center gap-2 p-5 rounded-xl font-display font-extrabold text-xl transition-all duration-200 hover:scale-[1.02] hover:brightness-110"
-                style={{ background: 'linear-gradient(135deg, var(--accent-1), #ff9a6c)', color: '#fff' }}
-              >
-                Write me an email ✉️
-              </a>
+              ) : (
+                <span className="font-heading font-bold text-sm" style={{ color: 'var(--dark)' }}>{value}</span>
+              )}
             </div>
-          </motion.div>
-        </div>
+          ))}
+        </motion.div>
+
+        {/* footer note */}
+        <motion.p
+          className="font-hand text-xl mt-14"
+          style={{ color: 'rgba(255,255,255,0.6)' }}
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.65 }}
+        >
+          made with love + coffee in Colombia
+        </motion.p>
       </div>
+
+      {/* checker strip bottom */}
+      <div className="checker-pink w-full h-5 absolute bottom-0 left-0 opacity-30" />
     </section>
   )
 }

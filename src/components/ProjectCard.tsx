@@ -1,39 +1,94 @@
 import { motion } from 'framer-motion'
 import type { Project } from '../types'
 import { categoryLabels, categoryColors } from '../content'
+import { CategoryIcon } from './Icons'
 
 interface Props {
   project: Project
   onClick: (project: Project) => void
   index: number
+  featured?: boolean
 }
 
-export default function ProjectCard({ project, onClick, index }: Props) {
+export default function ProjectCard({ project, onClick, index, featured }: Props) {
   const color = categoryColors[project.category]
+
   return (
     <motion.button
-      className="text-left w-full rounded-xl p-6 transition-all duration-200 hover:scale-[1.02] cursor-pointer"
-      style={{ backgroundColor: 'var(--surface)', border: '1px solid var(--border)' }}
+      className="sticker-card text-left w-full overflow-hidden cursor-pointer relative group"
+      style={{ padding: 0 }}
       onClick={() => onClick(project)}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.08 }}
+      initial={{ opacity: 0, y: 24, rotate: index % 2 === 0 ? -0.5 : 0.5 }}
+      animate={{ opacity: 1, y: 0, rotate: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.07 }}
+      whileHover={{ rotate: index % 2 === 0 ? -1 : 1 }}
     >
-      <div className="flex items-center gap-2 mb-3">
-        <span className="text-xs font-mono px-2 py-0.5 rounded-full" style={{ backgroundColor: `${color}22`, color }}>
+      {/* color header block */}
+      <div
+        className="p-4 flex items-center justify-between"
+        style={{ backgroundColor: color + '22', borderBottom: '2px solid var(--dark)' }}
+      >
+        <span
+          className="font-mono text-xs font-bold px-2 py-1 rounded-full border-2 flex items-center gap-1"
+          style={{ backgroundColor: color, color: ['var(--lime)', 'var(--cyan)'].includes(color) ? 'var(--dark)' : '#fff', borderColor: 'var(--dark)', boxShadow: '1px 1px 0 var(--dark)' }}
+        >
+          <CategoryIcon category={project.category} size={14} color={['var(--lime)', 'var(--cyan)'].includes(color) ? 'var(--dark)' : '#fff'} />
           {categoryLabels[project.category]}
         </span>
-        <span className="text-text-muted text-xs">{project.period}</span>
+        <span
+          className="font-display font-bold opacity-25 group-hover:opacity-60 transition-opacity"
+          style={{ fontSize: featured ? '3rem' : '2rem', lineHeight: 1, color }}
+        >
+          {String(index + 1).padStart(2, '0')}
+        </span>
       </div>
-      <h3 className="font-heading font-bold text-text text-lg mb-2">{project.title}</h3>
-      <p className="text-text-muted text-sm line-clamp-2">{project.problem}</p>
-      <div className="flex flex-wrap gap-1 mt-4">
-        {project.stack.slice(0, 3).map((s) => (
-          <span key={s} className="text-xs font-mono px-2 py-0.5 rounded" style={{ backgroundColor: 'var(--surface-2)', color: 'var(--text-muted)' }}>
-            {s}
-          </span>
-        ))}
-        {project.stack.length > 3 && <span className="text-xs text-text-muted px-1">+{project.stack.length - 3}</span>}
+
+      {/* body */}
+      <div style={{ padding: featured ? '1.5rem' : '1.25rem' }}>
+        <h3
+          className="font-display font-bold leading-tight mb-2"
+          style={{ fontSize: featured ? '1.5rem' : '1.15rem', color: 'var(--dark)' }}
+        >
+          {project.title}
+        </h3>
+
+        <p
+          className="text-sm leading-relaxed mb-4"
+          style={{
+            color: 'var(--text-muted)',
+            display: '-webkit-box',
+            WebkitLineClamp: featured ? 3 : 2,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+          }}
+        >
+          {project.problem}
+        </p>
+
+        {/* stack tags */}
+        <div className="flex flex-wrap gap-1.5">
+          {project.stack.slice(0, featured ? 5 : 3).map((s) => (
+            <span
+              key={s}
+              className="font-mono text-xs px-2 py-0.5 rounded-full border"
+              style={{ borderColor: 'rgba(26,26,26,0.2)', color: 'var(--text-muted)' }}
+            >
+              {s}
+            </span>
+          ))}
+          {project.stack.length > (featured ? 5 : 3) && (
+            <span className="font-mono text-xs px-1" style={{ color: 'var(--text-muted)' }}>
+              +{project.stack.length - (featured ? 5 : 3)}
+            </span>
+          )}
+        </div>
+
+        {/* open cta */}
+        <div className="mt-4 pt-3 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-all -translate-y-1 group-hover:translate-y-0 duration-200"
+          style={{ borderTop: '1px solid rgba(26,26,26,0.1)' }}
+        >
+          <span className="text-xs font-bold font-heading uppercase tracking-widest" style={{ color }}>Open →</span>
+        </div>
       </div>
     </motion.button>
   )

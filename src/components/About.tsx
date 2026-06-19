@@ -1,96 +1,175 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { profile, skills, languages } from '../content'
+import { FlagIcon } from './Icons'
+
+const Sparkle = ({ size = 20, color = '#fff' }: { size?: number; color?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill={color}>
+    <path d="M12 2L13.09 8.26L19 6L14.74 10.74L21 12L14.74 13.26L19 18L13.09 15.74L12 22L10.91 15.74L5 18L9.26 13.26L3 12L9.26 10.74L5 6L10.91 8.26L12 2Z"/>
+  </svg>
+)
+
+const skillColors = [
+  { bg: 'var(--pink)',   text: '#fff'           },
+  { bg: 'var(--lime)',   text: 'var(--dark)'    },
+  { bg: 'var(--orange)', text: '#fff'           },
+  { bg: 'var(--cyan)',   text: 'var(--dark)'    },
+  { bg: 'var(--purple)', text: '#fff'           },
+]
 
 export default function About() {
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-100px' })
+  const inView = useInView(ref, { once: true, margin: '-80px' })
   const paragraphs = profile.bio.split('\n\n').filter(Boolean)
 
   return (
-    <section id="about" className="py-28 relative" style={{ backgroundColor: 'var(--surface)' }}>
+    <section id="about" className="relative overflow-hidden" style={{ backgroundColor: 'var(--orange)' }}>
+      {/* sparkle decorations */}
+      <div className="absolute top-8 right-12 opacity-60"><Sparkle size={32} color="#fff" /></div>
+      <div className="absolute bottom-16 left-10 opacity-40"><Sparkle size={24} color="var(--lime)" /></div>
+      <div className="absolute top-1/2 right-8 opacity-30"><Sparkle size={18} color="var(--cream)" /></div>
+
+      {/* blob accent */}
       <div
-        className="absolute top-0 left-0 right-0 h-px"
-        style={{ background: 'linear-gradient(90deg, transparent, var(--accent-1) 40%, var(--accent-2) 60%, transparent)' }}
+        className="absolute blob-1 pointer-events-none"
+        style={{ width: 300, height: 280, backgroundColor: 'rgba(0,0,0,0.06)', top: -60, left: -60 }}
       />
-      <div className="max-w-7xl mx-auto px-6" ref={ref}>
+
+      <div className="max-w-7xl mx-auto px-6 py-24" ref={ref}>
         <motion.p
-          className="section-label mb-3"
-          initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.4 }}
+          className="section-label mb-4"
+          style={{ color: 'rgba(255,255,255,0.7)' }}
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
         >
-          01 — About
+          01 — About me
         </motion.p>
+
         <motion.h2
-          className="font-display font-extrabold mb-16"
-          style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)' }}
-          initial={{ opacity: 0, y: 20 }}
+          className="font-display font-bold leading-none mb-14"
+          style={{ fontSize: 'clamp(3.5rem, 9vw, 7rem)', color: '#fff', letterSpacing: '-0.02em' }}
+          initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <span className="grad-orange">Hi, I'm</span>{' '}
-          <span style={{ color: 'var(--text)' }}>Mar.</span>
+          Hi, I'm Mar.
+          <span className="font-hand ml-4" style={{ fontSize: '0.55em', color: 'var(--lime)' }}>
+            ¡the one!
+          </span>
         </motion.h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
-          {/* bio */}
-          <div className="lg:col-span-3 space-y-5">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+          {/* bio col */}
+          <div className="lg:col-span-7 space-y-5">
             {paragraphs.map((p, i) => (
               <motion.p
                 key={i}
                 className="leading-relaxed"
-                style={{ fontSize: '1.05rem', color: i === 0 ? 'var(--text)' : 'var(--text-muted)' }}
+                style={{
+                  fontSize: i === 0 ? '1.25rem' : '1rem',
+                  fontWeight: i === 0 ? 600 : 400,
+                  color: i === 0 ? '#fff' : 'rgba(255,255,255,0.82)',
+                  fontFamily: i === 0 ? "'Space Grotesk',sans-serif" : undefined,
+                }}
                 initial={{ opacity: 0, y: 16 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
               >
-                {i === 0 ? <strong>{p}</strong> : p}
+                {p}
               </motion.p>
             ))}
+
+            {/* stat strip */}
+            <motion.div
+              className="grid grid-cols-3 gap-4 mt-8"
+              initial={{ opacity: 0, y: 16 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.55 }}
+            >
+              {[
+                { n: '5+', label: 'Years building' },
+                { n: '10+', label: 'AI Agents built' },
+                { n: '3', label: 'Languages spoken' },
+              ].map(({ n, label }) => (
+                <div
+                  key={label}
+                  className="sticker-card text-center p-4"
+                  style={{ backgroundColor: 'var(--cream)' }}
+                >
+                  <div className="font-display font-bold" style={{ fontSize: '2.2rem', color: 'var(--pink)' }}>{n}</div>
+                  <div className="font-mono text-xs uppercase tracking-wide mt-1" style={{ color: 'var(--dark)' }}>{label}</div>
+                </div>
+              ))}
+            </motion.div>
           </div>
 
-          {/* skills + languages */}
-          <div className="lg:col-span-2 space-y-10">
-            {/* skills */}
+          {/* sidebar */}
+          <div className="lg:col-span-5 space-y-8">
+            {/* languages */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.35 }}
             >
-              <p className="section-label mb-4">Skills</p>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((s) => (
-                  <span
-                    key={s}
-                    className="px-3 py-1.5 rounded-md text-xs font-heading font-bold"
-                    style={{ backgroundColor: 'var(--surface-2)', color: 'var(--accent-3)', border: '1px solid rgba(184,255,87,0.15)' }}
-                  >
-                    {s}
-                  </span>
-                ))}
+              <div
+                className="sticker-card p-6"
+                style={{ backgroundColor: 'var(--cream)' }}
+              >
+                <p className="section-label mb-5" style={{ color: 'var(--text-muted)' }}>Languages</p>
+                <div className="space-y-4">
+                  {languages.map(({ lang, code, level }) => (
+                    <div key={lang} className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <FlagIcon code={code} size={24} className="rounded-sm" />
+                        <span className="font-heading font-bold" style={{ color: 'var(--dark)' }}>{lang}</span>
+                      </div>
+                      <span
+                        className="tag-pill text-xs"
+                        style={{ borderColor: 'var(--pink)', color: 'var(--pink)', backgroundColor: 'var(--pink-lt)' }}
+                      >
+                        {level}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </motion.div>
 
-            {/* languages */}
+            {/* skills */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.45 }}
+              transition={{ duration: 0.5, delay: 0.48 }}
             >
-              <p className="section-label mb-4">Languages</p>
-              <div className="space-y-3">
-                {languages.map(({ lang, flag, level }) => (
-                  <div key={lang} className="flex items-center gap-3">
-                    <span className="text-2xl">{flag}</span>
-                    <div>
-                      <span className="font-heading font-bold text-sm" style={{ color: 'var(--text)' }}>{lang}</span>
-                      <span className="text-xs ml-2" style={{ color: 'var(--text-muted)' }}>{level}</span>
-                    </div>
-                  </div>
-                ))}
+              <p className="section-label mb-4" style={{ color: 'rgba(255,255,255,0.7)' }}>Core Skills</p>
+              <div className="flex flex-wrap gap-2">
+                {skills.map((s, i) => {
+                  const c = skillColors[i % skillColors.length]
+                  return (
+                    <motion.span
+                      key={s}
+                      className="px-3 py-1.5 rounded-full text-xs font-heading font-bold border-2"
+                      style={{ backgroundColor: c.bg, color: c.text, borderColor: 'var(--dark)', boxShadow: '2px 2px 0 var(--dark)' }}
+                      initial={{ scale: 0 }}
+                      animate={inView ? { scale: 1 } : {}}
+                      transition={{ duration: 0.3, delay: 0.5 + i * 0.04, type: 'spring' }}
+                      whileHover={{ scale: 1.1, rotate: -2 }}
+                    >
+                      {s}
+                    </motion.span>
+                  )
+                })}
               </div>
             </motion.div>
           </div>
         </div>
+      </div>
+
+      {/* wavy bottom */}
+      <div className="wave-divider" style={{ marginBottom: -2 }}>
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="var(--cream)" />
+        </svg>
       </div>
     </section>
   )

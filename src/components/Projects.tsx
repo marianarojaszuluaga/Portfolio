@@ -4,6 +4,7 @@ import { projects, categoryLabels, categoryColors } from '../content'
 import type { ProjectCategory, Project } from '../types'
 import ProjectCard from './ProjectCard'
 import ProjectModal from './ProjectModal'
+import { CategoryIcon } from './Icons'
 
 const categories = Object.keys(categoryLabels) as ProjectCategory[]
 
@@ -11,58 +12,113 @@ export default function Projects() {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('imagine-apps')
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: '-100px' })
+  const inView = useInView(ref, { once: true, margin: '-80px' })
   const filtered = projects.filter((p) => p.category === activeCategory)
 
   return (
-    <section id="projects" className="py-24 bg-bg">
-      <div className="max-w-6xl mx-auto px-6" ref={ref}>
+    <section id="projects" className="relative overflow-hidden py-24" style={{ backgroundColor: 'var(--purple)' }}>
+      {/* scattered sparkles */}
+      <svg className="absolute top-10 right-16 opacity-30" width="32" height="32" viewBox="0 0 24 24" fill="var(--lime)">
+        <path d="M12 2L13.09 8.26L19 6L14.74 10.74L21 12L14.74 13.26L19 18L13.09 15.74L12 22L10.91 15.74L5 18L9.26 13.26L3 12L9.26 10.74L5 6L10.91 8.26L12 2Z"/>
+      </svg>
+      <svg className="absolute bottom-20 left-8 opacity-20" width="24" height="24" viewBox="0 0 24 24" fill="var(--pink)">
+        <path d="M12 2L13.09 8.26L19 6L14.74 10.74L21 12L14.74 13.26L19 18L13.09 15.74L12 22L10.91 15.74L5 18L9.26 13.26L3 12L9.26 10.74L5 6L10.91 8.26L12 2Z"/>
+      </svg>
+
+      {/* wavy top */}
+      <div className="wave-divider absolute top-0 left-0 right-0" style={{ transform: 'rotate(180deg)', marginTop: -2 }}>
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="var(--cream)" />
+        </svg>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 pt-8" ref={ref}>
         <motion.p
-          className="section-label mb-3"
-          initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.4 }}
+          className="section-label mb-4"
+          style={{ color: 'rgba(255,255,255,0.6)' }}
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
         >
           03 — Projects
         </motion.p>
-        <motion.h2
-          className="font-display font-extrabold mb-12"
-          style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', color: 'var(--text)' }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          What I've <span className="grad-cyan">built.</span>
-        </motion.h2>
-        <div className="flex flex-wrap gap-2 mb-10">
-          {categories.map((cat) => {
-            const isActive = cat === activeCategory
-            const color = categoryColors[cat]
-            return (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className="px-4 py-2 rounded-lg text-sm font-heading font-bold transition-all duration-200"
-                style={{
-                  backgroundColor: isActive ? `${color}33` : 'var(--surface)',
-                  color: isActive ? color : 'var(--text-muted)',
-                  borderWidth: 1,
-                  borderColor: isActive ? color : 'transparent',
-                }}
-              >
-                {categoryLabels[cat]}
-              </button>
-            )
-          })}
+
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+          <motion.h2
+            className="font-display font-bold leading-none"
+            style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)', color: '#fff', letterSpacing: '-0.02em' }}
+            initial={{ opacity: 0, y: 24 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.55, delay: 0.1 }}
+          >
+            What I've{' '}
+            <span style={{ color: 'var(--lime)' }}>built.</span> ✦
+          </motion.h2>
+
+          {/* category filter — pill buttons */}
+          <motion.div
+            className="flex flex-wrap gap-2"
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.4, delay: 0.25 }}
+          >
+            {categories.map((cat) => {
+              const isActive = cat === activeCategory
+              const color = categoryColors[cat]
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className="px-4 py-1.5 rounded-full text-xs font-heading font-bold border-2 transition-all duration-200 flex items-center gap-2"
+                  style={{
+                    backgroundColor: isActive ? color : 'transparent',
+                    color: isActive ? (color === 'var(--lime)' || color === 'var(--cyan)' ? 'var(--dark)' : '#fff') : 'rgba(255,255,255,0.9)',
+                    borderColor: isActive ? 'var(--dark)' : 'rgba(255,255,255,0.25)',
+                    boxShadow: isActive ? '2px 2px 0 rgba(0,0,0,0.3)' : 'none',
+                    transform: isActive ? 'translate(-1px,-1px)' : 'none',
+                  }}
+                >
+                  <CategoryIcon category={cat} size={18} color={isActive ? (color === 'var(--lime)' || color === 'var(--cyan)' ? 'var(--dark)' : '#fff') : 'rgba(255,255,255,0.9)'} />
+                  {categoryLabels[cat]}
+                </button>
+              )
+            })}
+          </motion.div>
         </div>
-        {filtered.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filtered.map((project, i) => (
-              <ProjectCard key={project.id} project={project} onClick={setSelectedProject} index={i} />
-            ))}
-          </div>
+
+        {/* grid */}
+        {filtered.length === 0 ? (
+          <p className="text-center py-16 font-hand text-2xl" style={{ color: 'rgba(255,255,255,0.6)' }}>
+            En camino... ✦ próximamente
+          </p>
         ) : (
-          <p className="text-text-muted text-center py-16">Proyectos en camino — próximamente.</p>
+          <div className="space-y-4">
+            {/* featured */}
+            <ProjectCard
+              project={filtered[0]}
+              onClick={setSelectedProject}
+              index={0}
+              featured
+            />
+            {/* rest */}
+            {filtered.length > 1 && (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {filtered.slice(1).map((p, i) => (
+                  <ProjectCard key={p.id} project={p} onClick={setSelectedProject} index={i + 1} />
+                ))}
+              </div>
+            )}
+          </div>
         )}
       </div>
+
+      {/* wavy bottom */}
+      <div className="wave-divider absolute bottom-0 left-0 right-0" style={{ marginBottom: -2 }}>
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="var(--cream)" />
+        </svg>
+      </div>
+      <div className="pb-16" />
+
       <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
     </section>
   )

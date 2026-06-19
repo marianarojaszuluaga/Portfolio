@@ -8,7 +8,7 @@ import Contact from './components/Contact'
 
 export default function App() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: 'var(--bg)', color: 'var(--text)' }}>
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--cream)', color: 'var(--dark)' }}>
       <Nav />
       <main>
         <Hero />
