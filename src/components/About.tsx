@@ -123,7 +123,7 @@ export default function About() {
                   {languages.map(({ lang, code, level }) => (
                     <div key={lang} className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <FlagIcon code={code} size={24} className="rounded-sm" />
+                        <FlagIcon code={code as 'gb' | 'co' | 'fr'} size={24} className="rounded-sm" />
                         <span className="font-heading font-bold" style={{ color: 'var(--dark)' }}>{lang}</span>
                       </div>
                       <span
