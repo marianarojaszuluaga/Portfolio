@@ -10,6 +10,7 @@ export default function Nav() {
     { label: t('nav.about'),    href: '#about' },
     { label: t('nav.work'),     href: '#experience' },
     { label: t('nav.projects'), href: '#projects' },
+    { label: t('nav.gallery'),  href: '#gallery' },
     { label: t('nav.contact'),  href: '#contact' },
   ]
 

@@ -10,6 +10,7 @@
 about = Sobre mí
 work = Trabajo
 projects = Proyectos
+gallery = Galeria
 contact = Contacto
 cta = Hablemos
 
@@ -17,6 +18,7 @@ cta = Hablemos
 about = About
 work = Work
 projects = Projects
+gallery = Gallery
 contact = Contact
 cta = Let's talk
 
@@ -255,13 +257,13 @@ impact = The company stopped depending on specific people to function. Knowledge
 ## PROJECT_finanz-butik-helpdesk
 
 [ES]
-title = Finanz Butik Helpdesk
+title = Mesa de ayuda Finanz Butik - Recepción de solicitudes en tiempo real 
 problem = El equipo gestionaba solicitudes dispersas sin trazabilidad, lo que generaba tickets perdidos, prioridades confusas y comunicación fragmentada.
 built = Hub centralizado con formulario guiado de 6 pasos, clasificación automática de tickets con scoring de confianza y nomenclatura única. Integración directa con Basecamp. Kanban completo con RBAC.
 impact = Sistema desplegado en producción con beta users procesando tickets reales. Eliminó la dispersión de solicitudes y creó trazabilidad completa del ciclo de vida.
 
 [EN]
-title = Finanz Butik Helpdesk
+title = Finanz Butik Helpdesk - Real time request 
 problem = The team managed scattered requests without traceability, causing lost tickets, unclear priorities, and fragmented communication.
 built = Centralized hub with guided 6-step form, automatic ticket classification with confidence scoring and unique nomenclature. Direct Basecamp integration. Full Kanban with RBAC.
 impact = System deployed in production with beta users processing real tickets. Eliminated request scattering and created complete lifecycle traceability.
@@ -281,6 +283,73 @@ title = Gimena — Agentic User Story Writer
 problem = Converting Figma designs and business requirements into development-ready User Stories was a manual, slow, and error-prone process.
 built = AI agent that transforms Figma flows and business requirements into development-ready User Stories. Automatically identifies edge cases to prevent rework.
 impact = Accelerated Imagine Apps' delivery cycle. PMs can focus on strategy while Gimena handles technical breakdown.
+
+---
+## PROJECT_gena
+
+[ES]
+title = Gena — Generador de Señales de Impacto de Negocio
+problem = El feedback crudo del cliente llegaba al backlog sin filtro estratégico, mezclando urgencias reales con ruido, lo que causaba decisiones de priorización reactivas y desperdicio de capacidad del equipo.
+built = Agente que transforma feedback crudo — mensajes de WhatsApp, tickets, notas de reunión — en señales de impacto clasificadas por urgencia y conectadas a objetivos activos de negocio. Solo pasan al backlog las señales con impacto demostrable.
+impact = Redujo el ruido del backlog y aceleró la velocidad de decisión del equipo de producto. Los PMs priorizan con criterio estratégico en minutos, no en días de aclaración.
+
+[EN]
+title = Gena — Business-Impact Signal Generator
+problem = Raw client feedback reached the backlog without strategic filtering, mixing real urgencies with noise and leading to reactive prioritization decisions that wasted team capacity.
+built = Agent that transforms raw feedback — WhatsApp messages, tickets, meeting notes — into impact signals classified by urgency and tied to active business objectives. Only signals with demonstrable impact pass to the backlog.
+impact = Reduced backlog noise and accelerated the product team's decision velocity. PMs prioritize with strategic criteria in minutes, not days of clarification.
+---
+## PROJECT_Gabi
+[ES]
+title = Gabi — Planificador Agéntico de Work Plans Técnicos
+problem = Convertir una User Story en un plan de trabajo técnico detallado requería sesiones manuales de estimación con alta variabilidad según el desarrollador, sin garantía de cobertura TDD ni principios SOLID.
+built = Agente que toma una HU generada por Gimena y produce un Work Plan completo: estrategia de pruebas (TDD), aplicación de principios SOLID, fases de implementación, estimaciones con niveles de confianza y evaluación de riesgos.
+impact = Redujo el tiempo de planificación por HU y estandarizó la calidad de los work plans. Los desarrolladores inician el trabajo con una hoja de ruta clara desde la primera prueba hasta la integración final.
+
+[EN]
+title = Gabi — Agentic Technical Work Planner
+problem = Turning a User Story into a detailed technical work plan required manual estimation sessions with high variability depending on who was planning, with no guarantee of TDD coverage or SOLID principles.
+built = Agent that takes a User Story from Gimena and produces a full Work Plan: testing strategy (TDD), SOLID principles application, implementation phases, time estimates with confidence levels, and risk assessment.
+impact = Reduced planning time per User Story and standardized work plan quality. Developers start work with a clear roadmap from the first test to final integration.
+---
+## PROJECT_Ginna
+[ES]
+title = Gabriela — Project Brain del Proyecto
+problem = El conocimiento estratégico y operativo de cada proyecto vivía disperso entre documentos, emails y memoria del equipo, sin una fuente de verdad centralizada que los agentes pudieran consultar.
+built = Template de Project Brain que centraliza el contexto estratégico, reglas de negocio, stakeholders, alcance y decisiones del proyecto como fuente de verdad para toda la orquestación de agentes. Incluye un sistema de change log para mantener alineación ante cambios de scope.
+impact = Los agentes toman decisiones alineadas al negocio desde el primer prompt. Elimina desalineaciones entre equipos y reduce drásticamente las aclaraciones manuales durante el ciclo de entrega.
+
+[EN]
+title = Gabriela — Project Brain
+problem = Strategic and operational project knowledge was scattered across documents, emails, and team memory, with no centralized source of truth for agents to consult.
+built = Project Brain template that centralizes strategic context, business rules, stakeholders, scope, and decisions as the source of truth for the entire agent orchestration. Includes a change log system to maintain alignment through scope changes.
+impact = Agents make business-aligned decisions from the first prompt. Eliminates team misalignment and drastically reduces manual clarifications during the delivery cycle.
+---
+## PROJECT_Grase
+[ES]
+title = QA Integrator — Validador de Contratos de API
+problem = La validación de APIs contra contratos OpenAPI/Swagger, pruebas de seguridad y performance se realizaba de forma manual e inconsistente entre entregas, generando regresiones y falta de trazabilidad.
+built = Agente especializado en QA de API que ejecuta validación de contrato, E2E API tests, pruebas de integración, performance y seguridad. Genera reportes estructurados con go/no-go y evidencia trazable por entrega.
+impact = Estandarizó el proceso de QA de API en todos los proyectos, reduciendo regresiones en producción y acelerando los ciclos de entrega con evidencia auditab
+
+[EN]
+title = QA Integrator — API Contract Validator
+problem = API validation against OpenAPI/Swagger contracts, security, and performance testing was done manually and inconsistently across deliveries, generating regressions and lack of traceability.
+built = Specialized API QA agent that runs contract validation, E2E API tests, integration tests, performance, and security testing. Generates structured reports with go/no-go decisions and traceable evidence per delivery.
+impact = Standardized the API QA process across all projects, reducing production regressions and accelerating delivery cycles with auditable evidence.
+---
+## PROJECT_Goldy
+[ES]
+title = Unit Test Standards Reviewer — Revisor de Estándares de Pruebas
+problem = La calidad de los unit tests variaba significativamente entre desarrolladores: cobertura insuficiente, aserciones débiles y edge cases ignorados pasaban desapercibidos hasta producción.
+built = Agente que audita unit tests contra estándares definidos: naming, cobertura mínima del 80%, aislamiento, calidad de aserciones, cobertura de edge cases y uso correcto de mocks. Genera un reporte de cumplimiento accionable con hallazgos priorizados.
+impact = Elevó la calidad base de los unit tests en el equipo y redujo regresiones en funcionalidades críticas como autenticación y manejo de errores.
+
+[EN]
+title = Unit Test Standards Reviewer — Test Standards Auditor
+problem = Unit test quality varied significantly across developers: insufficient coverage, weak assertions, and ignored edge cases went unnoticed until production.
+built = Agent that audits unit tests against defined standards: naming conventions, minimum 80% coverage, isolation, assertion quality, edge case coverage, and proper mock usage. Generates an actionable compliance report with prioritized findings.
+impact = Raised the baseline unit test quality across the team and reduced regressions in critical features like authentication and error handling.
 
 ---
 
@@ -505,3 +574,96 @@ location_value = Colombia · Remote
 phone_label = Phone
 linkedin_label = LinkedIn
 footer = made with love + coffee in Colombia
+
+## GALLERY
+
+[ES]
+section_label = 06 — Galeria
+heading_1 = Chismosea
+heading_2 = Mira las ultimas 
+heading_accent = actualizaciones 
+body = Me encanta farandulear en eventos, aprender; compartir lo que contruyo, y crear comunidad al rededor de quién soy y lo que me gusta hacer. 
+
+[EN]
+section_label = 06 — Gallery
+heading_1 = Sneek pic 
+heading_2 = Look at my latest 
+heading_accent = Updates.
+body = I love to go to events, share new build, and create community arround who i am and what i love to do. 
+
+## GALLERY_Calendar
+[ES] 
+title= Próximos eventos 
+heading_1 = nos vemos alla
+body= Conoce los eventos más top a los que puedes asistir según tu interes
+
+[EN]
+title: Events comming up
+heading_1 = See you there
+body= Learn about the upcomming events of interest and lets meet there.
+
+
+
+
+
+## GALLERY_Calendar_1
+[EN]
+title= Women Entrepreneurship Week
+brief= Global entrepreneurship week for women with events in 100+ countries, accessible virtually from Colombia
+date= November 2026
+Category= Género
+galery_category= Calendar
+
+[ES]
+title= Semana del Emprendimiento Femenino
+brief= Semana global de emprendimiento femenino con eventos en más de 100 países, accesible virtualmente desde Colombia
+date= Noviembre 2026
+galery_category= Calendar
+
+---
+
+## GALLERY_Calendar_2
+[EN]
+title= Lean In Summit
+brief= Women's leadership and gender equity conference in the workplace, fully virtual and globally accessible
+date= October 2026
+Category= Género
+galery_category= Calendar
+
+[ES]
+title= Lean In Summit
+brief= Conferencia de liderazgo femenino y equidad de género en el trabajo, completamente virtual y accesible desde Colombia
+date= Octubre 2026
+galery_category= Calendar
+
+---
+
+## GALLERY_Calendar_3
+[EN]
+title= Women in Innovation Summit
+brief= Summit focused on women innovators in science, technology and business, virtual format
+date= August 12, 2026
+Category= Género
+galery_category= Calendar
+
+[ES]
+title= Cumbre de Mujeres en Innovación
+brief= Cumbre centrada en mujeres innovadoras en ciencia, tecnología y negocios, en formato virtual
+date= 12 de agosto, 2026
+galery_category= Calendar
+
+---
+
+## GALLERY_Calendar_4
+[EN]
+title= LeadersIn Innovation Forum
+brief= Year-end virtual forum on innovation trends and strategic outlook for the following year
+date= December 2026
+Category= Innovación
+galery_category= Calendar
+
+[ES]
+title= Foro LeadersIn de Innovación
+brief= Foro virtual de cierre de año sobre tendencias de innovación y perspectivas estratégicas para el siguiente ejercicio
+date= Diciembre 2026
+galery_category= Calendar

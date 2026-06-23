@@ -111,6 +111,17 @@ function build(lang) {
   // ── Contact ──
   const contact = get('CONTACT')
 
+  // ── Gallery ──
+  const galleryUi = get('GALLERY')
+  const calendarUi = get('GALLERY_Calendar')
+  const calendarItems = []
+  let k = 1
+  while (sections[`GALLERY_Calendar_${k}`]) {
+    const item = get(`GALLERY_Calendar_${k}`)
+    calendarItems.push(item)
+    k++
+  }
+
   return {
     nav,
     hero,
@@ -130,6 +141,13 @@ function build(lang) {
       items: educationItems,
     },
     contact,
+    gallery: {
+      ...galleryUi,
+      calendar: {
+        ...calendarUi,
+        items: calendarItems,
+      },
+    },
   }
 }
 
@@ -139,14 +157,14 @@ function deepMerge(base, override) {
   if (Array.isArray(override)) return override
   if (typeof override !== 'object' || override === null) return override
 
-  const result = { ...base }
+  const safeBase = (base && typeof base === 'object' && !Array.isArray(base)) ? base : {}
+  const result = { ...safeBase }
   for (const key of Object.keys(override)) {
     const val = override[key]
     if (val && typeof val === 'object' && !Array.isArray(val) && Object.keys(val).length === 0) {
-      // empty object from build() means "don't touch this key"
       continue
     }
-    result[key] = deepMerge(base[key], val)
+    result[key] = deepMerge(safeBase[key], val)
   }
   return result
 }
