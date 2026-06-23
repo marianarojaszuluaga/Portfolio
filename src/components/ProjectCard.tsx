@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import type { Project } from '../types'
-import { categoryLabels, categoryColors } from '../content'
-import { CategoryIcon } from './Icons'
+import { categoryColors, categoryIcons } from '../content'
 
 interface Props {
   project: Project
@@ -11,7 +11,14 @@ interface Props {
 }
 
 export default function ProjectCard({ project, onClick, index, featured }: Props) {
+  const { t } = useTranslation()
   const color = categoryColors[project.category]
+  const icon = categoryIcons[project.category] ?? 'folder'
+  const lightBgs = ['var(--accent-2)', 'var(--accent-3)', 'var(--sky)', 'var(--mustard)', 'var(--blush)', 'var(--lime)', 'var(--cyan)']
+  const badgeTextColor = lightBgs.includes(color) ? 'var(--dark)' : '#fff'
+
+  const title = t(`projects.items.${project.id}.title`, { defaultValue: project.title })
+  const problem = t(`projects.items.${project.id}.problem`, { defaultValue: project.problem })
 
   return (
     <motion.button
@@ -30,10 +37,10 @@ export default function ProjectCard({ project, onClick, index, featured }: Props
       >
         <span
           className="font-mono text-xs font-bold px-2 py-1 rounded-full border-2 flex items-center gap-1"
-          style={{ backgroundColor: color, color: ['var(--lime)', 'var(--cyan)'].includes(color) ? 'var(--dark)' : '#fff', borderColor: 'var(--dark)', boxShadow: '1px 1px 0 var(--dark)' }}
+          style={{ backgroundColor: color, color: badgeTextColor, borderColor: 'var(--dark)', boxShadow: '1px 1px 0 var(--dark)' }}
         >
-          <CategoryIcon category={project.category} size={14} color={['var(--lime)', 'var(--cyan)'].includes(color) ? 'var(--dark)' : '#fff'} />
-          {categoryLabels[project.category]}
+          <span className="material-icons-round" style={{ fontSize: 13, lineHeight: 1 }}>{icon}</span>
+          {t(`projects.categories.${project.category}`)}
         </span>
         <span
           className="font-display font-bold opacity-25 group-hover:opacity-60 transition-opacity"
@@ -49,7 +56,7 @@ export default function ProjectCard({ project, onClick, index, featured }: Props
           className="font-display font-bold leading-tight mb-2"
           style={{ fontSize: featured ? '1.5rem' : '1.15rem', color: 'var(--dark)' }}
         >
-          {project.title}
+          {title}
         </h3>
 
         <p
@@ -62,7 +69,7 @@ export default function ProjectCard({ project, onClick, index, featured }: Props
             overflow: 'hidden',
           }}
         >
-          {project.problem}
+          {problem}
         </p>
 
         {/* stack tags */}

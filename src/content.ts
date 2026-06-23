@@ -280,6 +280,30 @@ export const education: Education[] = [
   },
 ]
 
+export const certifications = [
+  // Liderazgo & gestión
+  { title: 'Programa de Liderazgo de Alto Desempeño', issuer: 'Blum',           icon: 'emoji_events'  },
+  { title: 'Google Project Management',               issuer: 'Coursera',        icon: 'work_history'  },
+  { title: 'Professional IT Project Manager',         issuer: 'IBM',             icon: 'business_center' },
+  { title: 'Scrum Master',                            issuer: 'Platzi',          icon: 'group_work'    },
+  { title: 'Gestión de Equipos con Notion',           issuer: 'Platzi',          icon: 'groups'        },
+  // Notion
+  { title: 'Notion Advanced',                         issuer: 'Notion Academy',  icon: 'layers'        },
+  { title: 'Notion Essentials',                       issuer: 'Notion Academy',  icon: 'note_alt'      },
+  { title: 'Notion Workflows',                        issuer: 'Notion Academy',  icon: 'account_tree'  },
+  { title: 'Notion',                                  issuer: 'Platzi',          icon: 'edit_note'     },
+  // Automatización
+  { title: 'Workflows Profesionales con n8n',         issuer: 'Platzi',          icon: 'account_tree'  },
+  { title: 'n8n Self-Hosted para Empresas',           issuer: 'Platzi',          icon: 'dns'           },
+  { title: 'Automatizaciones con n8n',                issuer: 'Platzi',          icon: 'bolt'          },
+  // IA & tecnología
+  { title: 'Prompt Engineering',                      issuer: 'Platzi',          icon: 'auto_awesome'  },
+  { title: 'Gemini',                                  issuer: 'Platzi',          icon: 'stars'         },
+  { title: 'Fundamentos de Ingeniería de Software',   issuer: 'Platzi',          icon: 'code'          },
+  { title: 'Introducción a la Web',                   issuer: 'Platzi',          icon: 'language'      },
+  { title: 'Computación Básica',                      issuer: 'Platzi',          icon: 'computer'      },
+]
+
 export const categoryLabels: Record<string, string> = {
   'imagine-apps': 'Imagine Apps',
   ia: 'IA',
@@ -292,6 +316,14 @@ export const categoryColors: Record<string, string> = {
   'imagine-apps': 'var(--accent-1)',
   ia: 'var(--accent-2)',
   operaciones: 'var(--accent-3)',
-  emprendimiento: '#d946ef',
-  intentos: '#64748b',
+  emprendimiento: 'var(--coral)',
+  intentos: 'var(--eggplant)',
+}
+
+export const categoryIcons: Record<string, string> = {
+  'imagine-apps': 'devices',
+  ia:             'smart_toy',
+  operaciones:    'tune',
+  emprendimiento: 'rocket_launch',
+  intentos:       'palette',
 }

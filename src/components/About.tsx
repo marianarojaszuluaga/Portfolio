@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { profile, skills, languages } from '../content'
+import { useTranslation } from 'react-i18next'
 import { FlagIcon } from './Icons'
 
 const Sparkle = ({ size = 20, color = '#fff' }: { size?: number; color?: string }) => (
@@ -18,12 +18,22 @@ const skillColors = [
 ]
 
 export default function About() {
+  const { t } = useTranslation()
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
-  const paragraphs = profile.bio.split('\n\n').filter(Boolean)
+
+  const bioParagraphs = ['about.bio_p1', 'about.bio_p2', 'about.bio_p3', 'about.bio_p4']
+  const skills = t('skills', { returnObjects: true }) as string[]
+  const languages = t('languages_list', { returnObjects: true }) as Array<{ lang: string; code: string; level: string }>
+
+  const stats = [
+    { n: t('about.stat_years_value'),    label: t('about.stat_years_label') },
+    { n: t('about.stat_agents_value'),   label: t('about.stat_agents_label') },
+    { n: t('about.stat_languages_value'),label: t('about.stat_languages_label') },
+  ]
 
   return (
-    <section id="about" className="relative overflow-hidden" style={{ backgroundColor: 'var(--orange)' }}>
+    <section id="about" className="relative overflow-hidden" style={{ backgroundColor: 'var(--teal)' }}>
       {/* sparkle decorations */}
       <div className="absolute top-8 right-12 opacity-60"><Sparkle size={32} color="#fff" /></div>
       <div className="absolute bottom-16 left-10 opacity-40"><Sparkle size={24} color="var(--lime)" /></div>
@@ -42,7 +52,7 @@ export default function About() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
         >
-          01 — About me
+          {t('about.section_label')}
         </motion.p>
 
         <motion.h2
@@ -52,18 +62,18 @@ export default function About() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Hi, I'm Mar.
-          <span className="font-hand ml-4" style={{ fontSize: '0.55em', color: 'var(--lime)' }}>
-            ¡the one!
+          {t('about.heading')}
+          <span className="font-hand ml-4" style={{ fontSize: '0.55em', color: 'rgba(255,255,255,0.9)' }}>
+            {t('about.subtitle')}
           </span>
         </motion.h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           {/* bio col */}
           <div className="lg:col-span-7 space-y-5">
-            {paragraphs.map((p, i) => (
+            {bioParagraphs.map((key, i) => (
               <motion.p
-                key={i}
+                key={key}
                 className="leading-relaxed"
                 style={{
                   fontSize: i === 0 ? '1.25rem' : '1rem',
@@ -75,7 +85,7 @@ export default function About() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
               >
-                {p}
+                {t(key)}
               </motion.p>
             ))}
 
@@ -86,11 +96,7 @@ export default function About() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.55 }}
             >
-              {[
-                { n: '5+', label: 'Years building' },
-                { n: '10+', label: 'AI Agents built' },
-                { n: '3', label: 'Languages spoken' },
-              ].map(({ n, label }) => (
+              {stats.map(({ n, label }) => (
                 <div
                   key={label}
                   className="sticker-card text-center p-4"
@@ -111,11 +117,8 @@ export default function About() {
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.35 }}
             >
-              <div
-                className="sticker-card p-6"
-                style={{ backgroundColor: 'var(--cream)' }}
-              >
-                <p className="section-label mb-5" style={{ color: 'var(--text-muted)' }}>Languages</p>
+              <div className="sticker-card p-6" style={{ backgroundColor: 'var(--cream)' }}>
+                <p className="section-label mb-5" style={{ color: 'var(--text-muted)' }}>{t('about.languages_title')}</p>
                 <div className="space-y-4">
                   {languages.map(({ lang, code, level }) => (
                     <div key={lang} className="flex items-center justify-between">
@@ -141,7 +144,7 @@ export default function About() {
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.48 }}
             >
-              <p className="section-label mb-4" style={{ color: 'rgba(255,255,255,0.7)' }}>Core Skills</p>
+              <p className="section-label mb-4" style={{ color: 'rgba(255,255,255,0.7)' }}>{t('about.skills_title')}</p>
               <div className="flex flex-wrap gap-2">
                 {skills.map((s, i) => {
                   const c = skillColors[i % skillColors.length]

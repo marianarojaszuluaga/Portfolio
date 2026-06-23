@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import { experience, additionalExperience } from '../content'
 
 const companyColors: Record<string, string> = {
@@ -11,13 +12,15 @@ const companyColors: Record<string, string> = {
 }
 
 export default function Experience() {
+  const { t } = useTranslation()
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
+  const expTranslations = t('experience.items', { returnObjects: true }) as Array<{ role: string; description: string }>
+
   return (
     <section id="experience" className="py-24 relative" style={{ backgroundColor: 'var(--cream)' }}>
-      {/* checker strip top */}
-      <div className="checker w-full h-5 absolute top-0 left-0 opacity-20" />
+      <div className="w-full h-px absolute top-0 left-0" style={{ background: 'var(--border)' }} />
 
       <div className="max-w-7xl mx-auto px-6" ref={ref}>
         <motion.p
@@ -25,7 +28,7 @@ export default function Experience() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
         >
-          02 — Where I've worked
+          {t('experience.section_label')}
         </motion.p>
 
         <motion.h2
@@ -35,14 +38,17 @@ export default function Experience() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.55, delay: 0.1 }}
         >
-          My{' '}
-          <span style={{ color: 'var(--pink)' }}>journey.</span>
-          <span className="font-hand ml-3" style={{ fontSize: '0.55em', color: 'var(--orange)' }}>so far!</span>
+          {t('experience.heading')}{' '}
+          <span style={{ color: 'var(--pink)' }}>{t('experience.heading_accent')}</span>
+          <span className="font-hand ml-3" style={{ fontSize: '0.55em', color: 'var(--teal)' }}>{t('experience.heading_sub')}</span>
         </motion.h2>
 
         <div className="space-y-4">
           {experience.map((exp, i) => {
             const accent = companyColors[exp.company] ?? 'var(--pink)'
+            const tr = expTranslations[i]
+            const role = tr?.role ?? exp.role
+            const description = tr?.description ?? exp.description
             return (
               <motion.div
                 key={i}
@@ -63,7 +69,7 @@ export default function Experience() {
                             className="font-display font-bold text-xl leading-tight"
                             style={{ color: 'var(--dark)' }}
                           >
-                            {exp.role}
+                            {role}
                           </h3>
                           {exp.highlight && (
                             <span
@@ -101,7 +107,7 @@ export default function Experience() {
                       className="text-sm leading-relaxed mt-3"
                       style={{ color: 'var(--text-muted)' }}
                     >
-                      {exp.description}
+                      {description}
                     </p>
                   </div>
                 </div>
@@ -117,7 +123,7 @@ export default function Experience() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.75 }}
         >
-          <p className="section-label mb-5">Also been part of</p>
+          <p className="section-label mb-5">{t('experience.additional_title')}</p>
           <div className="flex flex-wrap gap-3">
             {additionalExperience.map((item) => (
               <span
@@ -132,8 +138,7 @@ export default function Experience() {
         </motion.div>
       </div>
 
-      {/* checker strip bottom */}
-      <div className="checker w-full h-5 absolute bottom-0 left-0 opacity-20" />
+      <div className="w-full h-px absolute bottom-0 left-0" style={{ background: 'var(--border)' }} />
     </section>
   )
 }

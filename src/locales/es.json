@@ -1,0 +1,233 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "work": "Trabajo",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "cta": "Hablemos"
+  },
+  "hero": {
+    "greeting": "¡Hola! — Soy",
+    "role": "Líder Estratégica de Producto & Ops ✦",
+    "tagline": "Resuelvo problemas humanos con tecnología y un enfoque ético.",
+    "cta_work": "Ver mi trabajo",
+    "cta_talk": "Hablemos →",
+    "sticker_years_text": "5+ años",
+    "sticker_years_sub": "construyendo",
+    "sticker_location_text": "dónde estoy",
+    "sticker_location_sub": "Colombia",
+    "sticker_dog_text": "quién soy",
+    "sticker_dog_sub": "dog mom 🐾",
+    "sticker_ride_text": "qué me gusta",
+    "sticker_ride_sub": "me encanta pedalear"
+  },
+  "about": {
+    "section_label": "01 — Sobre mí",
+    "heading": "Hola, soy Mar.",
+    "subtitle": "¡la misma!",
+    "bio_p1": "¡Hola! Me llaman Mar.",
+    "bio_p2": "Politóloga de profesión, apasionada por la tecnología y los problemas humanos que se esconden en las operaciones del día a día. Tengo dos perras que son lo mejor de mi vida.",
+    "bio_p3": "Soy operadora con pensamiento estratégico. Hace más de 5 años soy dueña de iniciativas de producto y operaciones de extremo a extremo — desde la primera conversación hasta el sistema corriendo en producción. Mi trabajo es reducir la ambigüedad, crear alineación y convertir ideas en algo que los equipos puedan ejecutar realmente.",
+    "bio_p4": "Me importan las personas, y lo demuestro con estructura y claridad, no con eslóganes.",
+    "stat_years_value": "5+",
+    "stat_years_label": "Años construyendo",
+    "stat_agents_value": "10+",
+    "stat_agents_label": "Agentes de IA creados",
+    "stat_languages_value": "3",
+    "stat_languages_label": "Idiomas hablados",
+    "skills_title": "Con qué trabajo",
+    "languages_title": "Idiomas"
+  },
+  "skills": [
+    "Liderazgo Estratégico",
+    "Gestión de Producto",
+    "Diseño de Operaciones",
+    "Herramientas IA & Automatización",
+    "Alineación de Stakeholders",
+    "Planificación de Roadmap",
+    "Equipos Multifuncionales",
+    "Sprint Planning",
+    "Mejora de Procesos",
+    "Transformación Digital"
+  ],
+  "languages_list": [
+    {
+      "lang": "Inglés",
+      "code": "gb",
+      "level": "C2 Avanzado / Nativo"
+    },
+    {
+      "lang": "Español",
+      "code": "co",
+      "level": "Nativo (lengua materna)"
+    },
+    {
+      "lang": "Francés",
+      "code": "fr",
+      "level": "Intermedio"
+    }
+  ],
+  "experience": {
+    "section_label": "02 — Dónde he trabajado",
+    "heading": "Mi",
+    "heading_accent": "trayectoria.",
+    "heading_sub": "¡hasta ahora!",
+    "additional_title": "Otros roles",
+    "items": [
+      {
+        "role": "Líder Estratégica de Producto & Operaciones",
+        "description": "Convierto objetivos de liderazgo en roadmaps que los equipos pueden ejecutar. Soy responsable de la respuesta a incidentes de extremo a extremo — cuando un incidente de backend que impactó al cliente ocurrió, lideré el descubrimiento, definí la solución y presenté el cambio de metodología directamente al cliente como su único punto de contacto. Construí y lidero Agent Hub (10+ agentes de IA), escribí el Ecosistema Imagine Apps como referencia interna y construí el Learning Hub para el onboarding de la empresa."
+      },
+      {
+        "role": "Docente de Tiempo Completo",
+        "description": "Gestiono programas académicos y guío grupos grandes de estudiantes en procesos de aprendizaje estructurado y actividades basadas en proyectos."
+      },
+      {
+        "role": "Product Owner & Líder de Desarrollo de Negocio",
+        "description": "Gestioné el roadmap de producto para un equipo internacional distribuido. Lideré la negociación diaria entre lo que el negocio necesitaba y lo que ingeniería podía entregar realmente. Mantuve conversaciones de requerimientos directamente con stakeholders — sin intermediarios, sin teléfono roto."
+      },
+      {
+        "role": "Directora de Operaciones (Voluntaria)",
+        "description": "Esta organización no tenía un framework de gestión de proyectos — yo lo construí, junto con el seguimiento de KPIs para saber si realmente funcionaba."
+      },
+      {
+        "role": "Gerente de Proyectos IT",
+        "description": "Gestioné equipos distribuidos entregando productos web y móviles en distintas zonas horarias. Fui responsable del sprint planning, backlog y seguimiento de riesgos y dependencias. Cuando algo estaba por romperse, quería saberlo antes que el cliente."
+      },
+      {
+        "role": "Líder de Operaciones & Desarrollo de Negocio",
+        "description": "Apoyé el escalado operacional y la mejora de procesos internos de una organización 100% remota."
+      }
+    ]
+  },
+  "projects": {
+    "section_label": "03 — Proyectos",
+    "heading": "Lo que he",
+    "heading_accent": "construido.",
+    "subtitle": "Conoce los proyectos que he construido hasta ahora. Podrás ver lo que he hecho dentro y fuera de mi trabajo. También lo que he intentado — revisa mi Galería de Intentos.",
+    "empty": "En camino... ✦ próximamente",
+    "modal_problem": "El problema",
+    "modal_built": "Lo que construí",
+    "modal_impact": "El impacto",
+    "modal_stack": "Stack",
+    "categories": {
+      "imagine-apps": "Imagine Apps",
+      "ia": "IA",
+      "operaciones": "Operaciones",
+      "emprendimiento": "Emprendimiento",
+      "intentos": "Galería de Intentos"
+    },
+    "items": {
+      "agent-hub": {
+        "title": "Agent Hub — Interfaz de Agentes IA sin Fricción",
+        "problem": "El cuello de botella no era construir agentes de IA — era que las personas no técnicas no podían acceder a ellos sin fricción. La tecnología existía; la interfaz humana, no.",
+        "built": "Definí la visión del producto, construí y curé más de 10 agentes, y diseñé una interfaz que elimina la fricción de acceso para usuarios no técnicos. Lideré el backlog completo y llevé el proyecto a pitch externo.",
+        "impact": "De herramienta interna a propuesta con potencial comercial. Agent Hub cambió la conversación de \"tenemos agentes\" a \"cualquiera puede usarlos\"."
+      },
+      "imagine-apps-ecosystem": {
+        "title": "Ecosistema Imagine Apps — Sistema de Conocimiento Interno",
+        "problem": "Las organizaciones se rompen cuando el conocimiento vive en la cabeza de las personas en lugar de en sistemas. Cada salida es una pérdida de memoria institucional.",
+        "built": "Sistema integral que centraliza todo el conocimiento operativo de Imagine Apps: Agents Hub, Ops Hub y Learning Hub. Una sola fuente de verdad construida para sobrevivir a cualquier individuo.",
+        "impact": "La empresa dejó de depender de personas específicas para funcionar. El conocimiento se volvió transferible, escalable y auditable."
+      },
+      "finanz-butik-helpdesk": {
+        "title": "Finanz Butik Helpdesk",
+        "problem": "El equipo gestionaba solicitudes dispersas sin trazabilidad, lo que generaba tickets perdidos, prioridades confusas y comunicación fragmentada.",
+        "built": "Hub centralizado con formulario guiado de 6 pasos, clasificación automática de tickets con scoring de confianza y nomenclatura única. Integración directa con Basecamp. Kanban completo con RBAC.",
+        "impact": "Sistema desplegado en producción con beta users procesando tickets reales. Eliminó la dispersión de solicitudes y creó trazabilidad completa del ciclo de vida."
+      },
+      "gimena-user-story-writer": {
+        "title": "Gimena — Escritora Agéntica de User Stories",
+        "problem": "El proceso de convertir diseños de Figma y requerimientos de negocio en User Stories para desarrollo era manual, lento y propenso a inconsistencias.",
+        "built": "Agente de IA que transforma flujos de Figma y requerimientos de negocio en User Stories listas para desarrollo. Identifica edge cases automáticamente para prevenir rework.",
+        "impact": "Aceleró el ciclo de entrega de Imagine Apps. Los PMs pueden enfocarse en estrategia mientras Gimena maneja el desglose técnico."
+      },
+      "lia-productivity-hub": {
+        "title": "Lía — Hub de Productividad y Visibilidad",
+        "problem": "Los equipos gestionaban calendarios, tareas y sesiones en herramientas separadas, perdiendo visibilidad y contexto entre ellas.",
+        "built": "Planificador unificado que integra calendarios, tareas y sesiones en una sola interfaz de visibilidad. Validado como solución de uso diario en ImagineApps.",
+        "impact": "Validado como POC exitoso. Evolucionó a activo escalable con potencial de convertirse en producto modular para equipos externos."
+      },
+      "operations-evolution-dashboard": {
+        "title": "Dashboard de Evolución Operacional",
+        "problem": "La gestión de proyectos dependía de actualizaciones verbales. Sin métricas, las decisiones de priorización eran subjetivas y la visibilidad de stakeholders era casi nula.",
+        "built": "Dashboard operacional que transforma reportes verbales en métricas medibles: probabilidad de completitud, solicitudes por área, mínimos de reporte por proyecto y persona.",
+        "impact": "Nueva fuente única de verdad para estados globales. Habilitó alineación de prioridades transparente con stakeholders basada en datos históricos."
+      },
+      "ai-wiki-for-builders": {
+        "title": "AI Wiki para Builders",
+        "problem": "Las personas que empiezan a usar IA para construir productos no necesitan otro tutorial — necesitan herramientas listas para resolver problemas reales, ahora.",
+        "built": "Colección curada de skills, agentes y estructuras agénticas diseñadas para resolver problemas en tiempo real. Cada recurso fue probado antes de incluirse.",
+        "impact": "Recurso independiente para builders que prefieren aprender haciendo. Reduce la curva de entrada de semanas a horas."
+      },
+      "mujeres-builders": {
+        "title": "Mujeres Builders — Comunidad de Mujeres en Tecnología",
+        "problem": "La comunidad tenía volumen de contenido pero no identidad. El problema real no era la cantidad de publicaciones — era que las mujeres no estaban co-creando, solo consumiendo.",
+        "built": "Base de datos de 28 herramientas de IA organizada para la comunidad. Marco estratégico de contenido y engagement centrado en identidad compartida y co-creación.",
+        "impact": "Red activa de 100+ mujeres que colaboran y construyen. La comunidad pasó de audiencia a equipo."
+      },
+      "speaker-ai-summit": {
+        "title": "Speaker — AI Summit",
+        "problem": "Las empresas querían implementar IA pero confundían la herramienta con la estrategia. El problema no era acceso a tecnología — era saber qué construir con ella.",
+        "built": "Master Class de implementación de IA para organizaciones de distintas industrias, en conjunto con Imagine Apps y 30X. Diseñada para ejecutivos y líderes, no para equipos técnicos.",
+        "impact": "Audiencia de empresas con casos de uso concretos y un framework para evaluar dónde tiene sentido implementar IA en sus operaciones."
+      },
+      "finanz-butik-release-notes": {
+        "title": "Finanz Butik — Release Notes & Comunicación de Producto",
+        "problem": "El cliente llegaba a las ceremonias Scrum con preguntas, no con criterio. Los cambios técnicos eran opacos para una audiencia no técnica.",
+        "built": "Decks de release notes que traducen cambios técnicos al lenguaje del negocio — sin simplificar, sin omitir. Cada entrega está diseñada para que el cliente llegue a la ceremonia con una postura crítica.",
+        "impact": "El cliente pasó de hacer preguntas a hacer observaciones. Las ceremonias se volvieron conversaciones estratégicas, no sesiones de explicación."
+      },
+      "growth-plan": {
+        "title": "Growth Plan — Desarrollo Profesional Estructurado",
+        "problem": "El crecimiento profesional sin estructura se convierte en reactividad — se aprende lo urgente, no lo estratégico. Sin una ruta, se avanza en círculos.",
+        "built": "Plan de desarrollo personal y profesional con prioridades de upskilling y trayectoria de carrera, construido con mentoría profesional. Incluye mapa de habilidades, objetivos por ciclo y métricas de avance.",
+        "impact": "Trayectoria de PM a Strategic Lead con base en decisiones deliberadas, no en oportunidades accidentales. Un sistema propio de crecimiento que sigue activo."
+      }
+    }
+  },
+  "education": {
+    "section_label": "04 — Educación",
+    "heading_pre": "Cimentada en la",
+    "heading_accent": "formación.",
+    "formal_label": "Educación formal",
+    "certs_label": "Otros certificados",
+    "items": [
+      {
+        "title": "Posgrado — Comunicación Interna y Gestión Estratégica",
+        "relevance": "Comunicación estratégica, cultura organizacional y marcos de comunicación de liderazgo."
+      },
+      {
+        "title": "Posgrado — Project Manager Profesional",
+        "relevance": "Metodologías avanzadas de gestión de proyectos y certificación profesional."
+      },
+      {
+        "title": "Máster en Marketing y Comunicación Política",
+        "relevance": "Estrategias de comunicación política, marcos de marketing y gestión de stakeholders."
+      },
+      {
+        "title": "Posgrado en Marketing Político y Comunicación",
+        "relevance": "Formación especializada en marketing político y estrategia de comunicación."
+      },
+      {
+        "title": "Pregrado en Ciencia Política",
+        "relevance": "Fundamentos de teoría política, políticas públicas, gobernanza y sistemas sociales."
+      }
+    ]
+  },
+  "contact": {
+    "section_label": "05 — Contacto",
+    "heading_1": "Hagamos",
+    "heading_2": "algo",
+    "heading_accent": "increíble.",
+    "body": "Estoy abierta a nuevos proyectos, colaboraciones y conversaciones. Escríbeme — respondo todo.",
+    "cta_email": "Envíame un correo",
+    "cta_copy": "Copiar correo",
+    "copied": "✓ ¡Copiado!",
+    "location_label": "Ubicación",
+    "location_value": "Colombia · Remoto",
+    "phone_label": "Teléfono",
+    "linkedin_label": "LinkedIn",
+    "footer": "hecho con amor + café en Colombia"
+  }
+}

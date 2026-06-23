@@ -1,0 +1,233 @@
+{
+  "nav": {
+    "about": "About",
+    "work": "Work",
+    "projects": "Projects",
+    "contact": "Contact",
+    "cta": "Let's talk"
+  },
+  "hero": {
+    "greeting": "Hi there! — I'm",
+    "role": "Strategic Product & Ops Lead ✦",
+    "tagline": "I solve human problems with tech through an ethical approach.",
+    "cta_work": "See my work",
+    "cta_talk": "Let's talk →",
+    "sticker_years_text": "5+ years",
+    "sticker_years_sub": "building things",
+    "sticker_location_text": "where i am",
+    "sticker_location_sub": "Colombia",
+    "sticker_dog_text": "who i am",
+    "sticker_dog_sub": "dog mom 🐾",
+    "sticker_ride_text": "what i like",
+    "sticker_ride_sub": "love biking"
+  },
+  "about": {
+    "section_label": "01 — About me",
+    "heading": "Hi, I'm Mar.",
+    "subtitle": "¡the one!",
+    "bio_p1": "Hi! They call me Mar.",
+    "bio_p2": "Political Science graduate, passionate about technology and the human problems hiding inside everyday operations. I have two girl dogs who are the best part of my life.",
+    "bio_p3": "I'm an operator who thinks strategically. For 5+ years I've owned product and operational initiatives end-to-end — from the first conversation to the system running in production. My job is reducing ambiguity, creating alignment, and turning ideas into something teams can actually run on.",
+    "bio_p4": "I care about people, and I show that through structure and clarity, not slogans.",
+    "stat_years_value": "5+",
+    "stat_years_label": "Years building",
+    "stat_agents_value": "10+",
+    "stat_agents_label": "AI Agents built",
+    "stat_languages_value": "3",
+    "stat_languages_label": "Languages spoken",
+    "skills_title": "What I work with",
+    "languages_title": "Languages"
+  },
+  "skills": [
+    "Strategic Leadership",
+    "Product Management",
+    "Operations Design",
+    "AI Tools & Automation",
+    "Stakeholder Alignment",
+    "Roadmap Planning",
+    "Cross-functional Teams",
+    "Sprint Planning",
+    "Process Improvement",
+    "Digital Transformation"
+  ],
+  "languages_list": [
+    {
+      "lang": "English",
+      "code": "gb",
+      "level": "C2 Advanced / Native"
+    },
+    {
+      "lang": "Spanish",
+      "code": "co",
+      "level": "Native (mother tongue)"
+    },
+    {
+      "lang": "French",
+      "code": "fr",
+      "level": "Intermediate"
+    }
+  ],
+  "experience": {
+    "section_label": "02 — Where I've worked",
+    "heading": "My",
+    "heading_accent": "journey.",
+    "heading_sub": "so far!",
+    "additional_title": "More roles",
+    "items": [
+      {
+        "role": "Strategic Product & Operations Lead",
+        "description": "Take leadership objectives and turn them into roadmaps teams can actually run. Own incident response end-to-end — when a client-facing backend incident hit, I ran discovery, defined the fix, and presented the methodology change directly to the client as their single point of contact. Built and lead Agent Hub (10+ AI agents), authored the Imagine Apps Ecosystem internal reference, and built the Learning Hub for company onboarding."
+      },
+      {
+        "role": "Full-Time Lecturer",
+        "description": "Manage academic programs and guide large student groups through structured learning processes and project-based activities."
+      },
+      {
+        "role": "Product Owner & Business Development Lead",
+        "description": "Owned the product roadmap for a distributed international team. Led the daily negotiation between what the business needed and what engineering could realistically ship. Ran requirements conversations directly with stakeholders — no relay, no telephone game."
+      },
+      {
+        "role": "Chief of Operations (Volunteer)",
+        "description": "This organization didn't have a project management framework — I built one, along with the KPI tracking to know if it was actually working."
+      },
+      {
+        "role": "IT Project Manager",
+        "description": "Managed distributed teams delivering web and mobile products across time zones. Owned sprint planning, backlog, risk and dependency tracking. When something was about to break, I wanted to know before the client did."
+      },
+      {
+        "role": "Operations & Business Development Lead",
+        "description": "Supported operational scaling and internal process improvements for a remote-first organization."
+      }
+    ]
+  },
+  "projects": {
+    "section_label": "03 — Projects",
+    "heading": "What I've",
+    "heading_accent": "built.",
+    "subtitle": "Get to know the projects I've built so far. You'll be able to see what I've done inside and outside my job. Also, what I've tried — check out my Attempts Gallery.",
+    "empty": "Coming soon... ✦ stay tuned",
+    "modal_problem": "The problem",
+    "modal_built": "What I built",
+    "modal_impact": "The impact",
+    "modal_stack": "Stack",
+    "categories": {
+      "imagine-apps": "Imagine Apps",
+      "ia": "AI",
+      "operaciones": "Operations",
+      "emprendimiento": "Entrepreneurship",
+      "intentos": "Attempts Gallery"
+    },
+    "items": {
+      "agent-hub": {
+        "title": "Agent Hub — Friction Reduction AI Agent Interface",
+        "problem": "The bottleneck wasn't building AI agents — it was that non-technical users couldn't access them without friction. The technology existed; the human interface didn't.",
+        "built": "Defined the product vision, built and curated 10+ agents, and designed an interface that eliminates access friction for non-technical users. Led the full backlog and took the project to external pitch.",
+        "impact": "From internal tool to a commercially viable proposal. Agent Hub shifted the conversation from \"we have agents\" to \"anyone can use them\"."
+      },
+      "imagine-apps-ecosystem": {
+        "title": "Imagine Apps Ecosystem — Internal Knowledge System",
+        "problem": "Organizations break when knowledge lives in people's heads instead of systems. Every departure is a loss of institutional memory.",
+        "built": "Comprehensive system centralizing all of Imagine Apps' operational knowledge: Agents Hub, Ops Hub, and Learning Hub. A single source of truth built to outlast any individual.",
+        "impact": "The company stopped depending on specific people to function. Knowledge became transferable, scalable, and auditable."
+      },
+      "finanz-butik-helpdesk": {
+        "title": "Finanz Butik Helpdesk",
+        "problem": "The team managed scattered requests without traceability, causing lost tickets, unclear priorities, and fragmented communication.",
+        "built": "Centralized hub with guided 6-step form, automatic ticket classification with confidence scoring and unique nomenclature. Direct Basecamp integration. Full Kanban with RBAC.",
+        "impact": "System deployed in production with beta users processing real tickets. Eliminated request scattering and created complete lifecycle traceability."
+      },
+      "gimena-user-story-writer": {
+        "title": "Gimena — Agentic User Story Writer",
+        "problem": "Converting Figma designs and business requirements into development-ready User Stories was a manual, slow, and error-prone process.",
+        "built": "AI agent that transforms Figma flows and business requirements into development-ready User Stories. Automatically identifies edge cases to prevent rework.",
+        "impact": "Accelerated Imagine Apps' delivery cycle. PMs can focus on strategy while Gimena handles technical breakdown."
+      },
+      "lia-productivity-hub": {
+        "title": "Lía — The Productivity & Visibility Hub",
+        "problem": "Teams were managing calendars, tasks, and sessions in separate tools, losing visibility and context between them.",
+        "built": "Unified planner integrating calendars, tasks, and sessions into a single visibility interface. Validated as a daily-use solution at ImagineApps.",
+        "impact": "Validated as a successful POC. Evolved into a scalable asset with potential to become a modular product for external teams."
+      },
+      "operations-evolution-dashboard": {
+        "title": "Operations Evolution Dashboard",
+        "problem": "Project management relied on verbal updates. Without metrics, prioritization decisions were subjective and stakeholder visibility was nearly nonexistent.",
+        "built": "Operational dashboard transforming verbal reports into measurable metrics: completion probability, requests by area, minimum reporting requirements per project and person.",
+        "impact": "New single source of truth for global statuses. Enabled transparent stakeholder priority alignment based on historical data."
+      },
+      "ai-wiki-for-builders": {
+        "title": "AI Wiki for Builders",
+        "problem": "People starting to use AI to build products don't need another tutorial — they need ready tools to solve real problems, now.",
+        "built": "Curated collection of skills, agents, and agentic structures designed to solve problems in real time. Every resource was tested before inclusion.",
+        "impact": "Independent resource for builders who prefer learning by doing. Reduces the entry curve from weeks to hours."
+      },
+      "mujeres-builders": {
+        "title": "Mujeres Builders — Women-in-Tech Community",
+        "problem": "The community had content volume but no identity. The real problem wasn't the number of posts — women weren't co-creating, just consuming.",
+        "built": "Database of 28 AI tools organized for the community. Strategic content and engagement framework centered on shared identity and co-creation, not visibility metrics.",
+        "impact": "Active network of 100+ women collaborating and building. The community went from audience to team."
+      },
+      "speaker-ai-summit": {
+        "title": "Speaker — AI Summit",
+        "problem": "Companies wanted to implement AI but confused the tool with the strategy. The problem wasn't access to technology — it was knowing what to build with it.",
+        "built": "AI implementation Master Class for organizations across different industries, together with Imagine Apps and 30X. Designed for executives and leaders, not technical teams.",
+        "impact": "Business audience with concrete use cases and a framework to evaluate where AI implementation makes sense in their operations."
+      },
+      "finanz-butik-release-notes": {
+        "title": "Finanz Butik — Release Notes & Product Communication",
+        "problem": "The client came to Scrum ceremonies with questions, not judgment. Technical changes were opaque for a non-technical audience, turning sprint reviews into interrogations.",
+        "built": "Release notes decks translating technical changes into business language — without oversimplifying or omitting. Each delivery is designed for the client to arrive at the ceremony with a critical stance.",
+        "impact": "The client went from asking questions to making observations. Ceremonies became strategic conversations, not explanation sessions."
+      },
+      "growth-plan": {
+        "title": "Growth Plan — Structured Professional Development",
+        "problem": "Professional growth without structure becomes reactivity — you learn what's urgent, not what's strategic. Without a roadmap, you go in circles.",
+        "built": "Personal and professional development plan with upskilling priorities and career trajectory, built with professional mentorship. Includes skills map, cycle objectives, and progress metrics.",
+        "impact": "Trajectory from PM to Strategic Lead based on deliberate decisions, not accidental opportunities. An own growth system that remains active."
+      }
+    }
+  },
+  "education": {
+    "section_label": "04 — Education",
+    "heading_pre": "Built on solid",
+    "heading_accent": "foundation.",
+    "formal_label": "Formal Education",
+    "certs_label": "Other Certificates",
+    "items": [
+      {
+        "title": "Post Graduate — Internal Communication & Strategic Management",
+        "relevance": "Strategic communication, organizational culture, leadership communication frameworks."
+      },
+      {
+        "title": "Post Graduate — Professional Project Manager",
+        "relevance": "Advanced project management methodologies and professional certification."
+      },
+      {
+        "title": "Master in Marketing and Political Communication",
+        "relevance": "Political communication strategies, marketing frameworks, and stakeholder engagement."
+      },
+      {
+        "title": "Postgraduate in Political Marketing and Communication",
+        "relevance": "Specialized training in political marketing and communication strategy."
+      },
+      {
+        "title": "Bachelor's in Political Science",
+        "relevance": "Foundation in political theory, public policy, governance, and social systems."
+      }
+    ]
+  },
+  "contact": {
+    "section_label": "05 — Contact",
+    "heading_1": "Let's make",
+    "heading_2": "something",
+    "heading_accent": "great.",
+    "body": "I'm open to new projects, collabs, and conversations. Write to me — I respond to everything.",
+    "cta_email": "Send me an email",
+    "cta_copy": "Copy email",
+    "copied": "✓ Copied!",
+    "location_label": "Location",
+    "location_value": "Colombia · Remote",
+    "phone_label": "Phone",
+    "linkedin_label": "LinkedIn",
+    "footer": "made with love + coffee in Colombia"
+  }
+}

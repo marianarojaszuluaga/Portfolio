@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion'
-import { profile, skills } from '../content'
-import { BadgeIcon } from './Icons'
-
-const ticker = [...skills, ...skills]
+import { useTranslation } from 'react-i18next'
+import { profile } from '../content'
 
 const Sparkle = ({ size = 24, color = 'var(--pink)', style = {} }: { size?: number; color?: string; style?: React.CSSProperties }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill={color} style={style}>
@@ -10,14 +8,19 @@ const Sparkle = ({ size = 24, color = 'var(--pink)', style = {} }: { size?: numb
   </svg>
 )
 
-const stickers = [
-  { icon: 'years', text: '5+ years', sub: 'building things', color: 'var(--lime)', textColor: 'var(--dark)', rotate: '-6deg', pos: { top: '8%', left: '2%' } },
-  { icon: 'remote', text: 'Remote', sub: 'Colombia', color: 'var(--pink)', textColor: '#fff', rotate: '4deg', pos: { top: '18%', right: '2%' } },
-  { icon: 'pets', text: 'Pets', sub: 'dog mom', color: '#fff', textColor: 'var(--dark)', rotate: '-3deg', pos: { bottom: '32%', right: '3%' } },
-  { icon: 'ride', text: 'Ride', sub: 'love biking', color: 'var(--cyan)', textColor: 'var(--dark)', rotate: '5deg', pos: { bottom: '38%', left: '1%' } },
+const stickerDefs = [
+  { icon: 'calendar_month',  color: 'var(--lime)',   textColor: 'var(--dark)', rotate: '-6deg', pos: { top: '8%', left: '2%' },    textKey: 'hero.sticker_years_text',    subKey: 'hero.sticker_years_sub' },
+  { icon: 'location_on',     color: 'var(--pink)',   textColor: '#fff',        rotate: '4deg',  pos: { top: '18%', right: '2%' },   textKey: 'hero.sticker_location_text', subKey: 'hero.sticker_location_sub' },
+  { icon: 'pets',            color: '#fff',          textColor: 'var(--dark)', rotate: '-3deg', pos: { bottom: '32%', right: '3%' },textKey: 'hero.sticker_dog_text',      subKey: 'hero.sticker_dog_sub' },
+  { icon: 'directions_bike', color: 'var(--cyan)',   textColor: 'var(--dark)', rotate: '5deg',  pos: { bottom: '38%', left: '1%' }, textKey: 'hero.sticker_ride_text',     subKey: 'hero.sticker_ride_sub' },
 ]
 
 export default function Hero() {
+  const { t } = useTranslation()
+
+  const ticker = (t('skills', { returnObjects: true }) as string[])
+  const tickerDouble = [...ticker, ...ticker]
+
   return (
     <section
       id="hero"
@@ -60,7 +63,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
             >
-              ¡Hola! — I'm
+              {t('hero.greeting')}
             </motion.p>
 
             <div className="overflow-hidden">
@@ -82,7 +85,7 @@ export default function Hero() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Strategic Product &amp; Ops Lead ✦
+              {t('hero.role')}
             </motion.p>
 
             <motion.p
@@ -92,7 +95,7 @@ export default function Hero() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.45 }}
             >
-              {profile.tagline}
+              {t('hero.tagline')}
             </motion.p>
 
             <motion.div
@@ -102,10 +105,10 @@ export default function Hero() {
               transition={{ duration: 0.45, delay: 0.55 }}
             >
               <a href="#projects" className="pill-btn pill-btn-pink">
-                See my work
+                {t('hero.cta_work')}
               </a>
               <a href="#contact" className="pill-btn pill-btn-white">
-                Let's talk →
+                {t('hero.cta_talk')}
               </a>
             </motion.div>
           </div>
@@ -134,9 +137,9 @@ export default function Hero() {
                   alt="Mariana Rojas Zuluaga"
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    const t = e.currentTarget as HTMLImageElement
-                    t.style.display = 'none'
-                    const p = t.parentElement
+                    const tgt = e.currentTarget as HTMLImageElement
+                    tgt.style.display = 'none'
+                    const p = tgt.parentElement
                     if (p) {
                       p.style.background = 'linear-gradient(135deg,var(--pink-lt),var(--cream))'
                       p.innerHTML = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'Fredoka',sans-serif;font-size:7rem;font-weight:700;color:var(--pink)">M</div>`
@@ -146,7 +149,7 @@ export default function Hero() {
               </div>
 
               {/* floating sticker cards */}
-              {stickers.map((s, i) => (
+              {stickerDefs.map((s, i) => (
                 <motion.div
                   key={i}
                   className="absolute px-3 py-2 rounded-xl border-2"
@@ -166,10 +169,10 @@ export default function Hero() {
                   whileHover={{ scale: 1.12, zIndex: 20 }}
                 >
                   <div className="flex items-center justify-center gap-2 mb-1">
-                    <BadgeIcon type={s.icon as any} size={18} color={s.textColor} className="shrink-0" />
-                    <div className="font-display font-bold text-sm leading-tight" style={{ color: s.textColor }}>{s.text}</div>
+                    <span className="material-icons-round shrink-0" style={{ fontSize: 18, color: s.textColor, lineHeight: 1 }}>{s.icon}</span>
+                    <div className="font-display font-bold text-sm leading-tight" style={{ color: s.textColor }}>{t(s.textKey)}</div>
                   </div>
-                  <div className="font-mono text-xs opacity-80" style={{ color: s.textColor }}>{s.sub}</div>
+                  <div className="font-mono text-xs opacity-80" style={{ color: s.textColor }}>{t(s.subKey)}</div>
                 </motion.div>
               ))}
             </div>
@@ -183,7 +186,7 @@ export default function Hero() {
         style={{ borderColor: 'var(--dark)', backgroundColor: 'var(--pink)' }}
       >
         <div className="marquee-track">
-          {ticker.map((skill, i) => (
+          {tickerDouble.map((skill, i) => (
             <span
               key={i}
               className="px-6 text-xs font-heading font-bold uppercase tracking-widest whitespace-nowrap text-white"

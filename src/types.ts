@@ -15,6 +15,7 @@ export interface Project {
   built: string
   impact: string
   stack: string[]
+  images?: string[]   // paths relative to /public, e.g. "/projects/my-project/hero.png"
 }
 
 export interface Education {
@@ -22,6 +23,12 @@ export interface Education {
   institution: string
   period: string
   relevance?: string
+}
+
+export interface Certification {
+  title: string
+  issuer: string
+  icon: string
 }
 
 export interface Experience {

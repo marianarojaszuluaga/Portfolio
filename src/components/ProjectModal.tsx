@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import type { Project } from '../types'
-import { categoryColors, categoryLabels } from '../content'
+import { categoryColors, categoryIcons } from '../content'
 
 interface Props {
   project: Project | null
@@ -9,6 +10,8 @@ interface Props {
 }
 
 export default function ProjectModal({ project, onClose }: Props) {
+  const { t } = useTranslation()
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose()
     window.addEventListener('keydown', onKey)
@@ -37,27 +40,53 @@ export default function ProjectModal({ project, onClose }: Props) {
             <button onClick={onClose} className="absolute top-4 right-4 text-text-muted hover:text-text transition-colors text-xl">✕</button>
             <div className="flex items-center gap-2 mb-4">
               <span
-                className="text-xs font-mono px-2 py-0.5 rounded-full"
+                className="text-xs font-mono px-2 py-0.5 rounded-full flex items-center gap-1"
                 style={{ backgroundColor: `${categoryColors[project.category]}22`, color: categoryColors[project.category] }}
               >
-                {categoryLabels[project.category]}
+                <span className="material-icons-round" style={{ fontSize: 12, lineHeight: 1 }}>{categoryIcons[project.category] ?? 'folder'}</span>
+                {t(`projects.categories.${project.category}`)}
               </span>
               <span className="text-text-muted text-xs">{project.period}</span>
             </div>
-            <h2 className="font-heading font-bold text-2xl text-text mb-6">{project.title}</h2>
+            <h2 className="font-heading font-bold text-2xl text-text mb-6">
+              {t(`projects.items.${project.id}.title`, { defaultValue: project.title })}
+            </h2>
+
+            {/* images gallery */}
+            {project.images && project.images.length > 0 && (
+              <div className="flex gap-3 overflow-x-auto pb-2 mb-6 -mx-1 px-1" style={{ scrollSnapType: 'x mandatory' }}>
+                {project.images.map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt={`${project.title} — ${i + 1}`}
+                    className="rounded-xl flex-shrink-0 object-cover"
+                    style={{
+                      width: project.images!.length === 1 ? '100%' : 260,
+                      height: 180,
+                      scrollSnapAlign: 'start',
+                      border: '1.5px solid var(--border)',
+                    }}
+                  />
+                ))}
+              </div>
+            )}
+
             <div className="space-y-6">
               {[
-                { label: 'El problema', value: project.problem },
-                { label: 'Lo que construí', value: project.built },
-                { label: 'El impacto', value: project.impact },
-              ].map(({ label, value }) => (
-                <div key={label}>
-                  <h3 className="text-xs font-mono uppercase tracking-widest text-text-muted mb-2">{label}</h3>
-                  <p className="text-text leading-relaxed">{value}</p>
+                { labelKey: 'projects.modal_problem', field: 'problem' },
+                { labelKey: 'projects.modal_built',   field: 'built' },
+                { labelKey: 'projects.modal_impact',  field: 'impact' },
+              ].map(({ labelKey, field }) => (
+                <div key={field}>
+                  <h3 className="text-xs font-mono uppercase tracking-widest text-text-muted mb-2">{t(labelKey)}</h3>
+                  <p className="text-text leading-relaxed">
+                    {t(`projects.items.${project.id}.${field}`, { defaultValue: (project as any)[field] })}
+                  </p>
                 </div>
               ))}
               <div>
-                <h3 className="text-xs font-mono uppercase tracking-widest text-text-muted mb-2">Stack</h3>
+                <h3 className="text-xs font-mono uppercase tracking-widest text-text-muted mb-2">{t('projects.modal_stack')}</h3>
                 <div className="flex flex-wrap gap-2">
                   {project.stack.map((s) => (
                     <span key={s} className="text-sm font-mono px-3 py-1 rounded" style={{ backgroundColor: 'var(--surface-2)', color: 'var(--text-muted)' }}>

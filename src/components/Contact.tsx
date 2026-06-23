@@ -1,9 +1,10 @@
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { profile } from '../content'
-import { ContactIcon } from './Icons'
 
 export default function Contact() {
+  const { t } = useTranslation()
   const [copied, setCopied] = useState(false)
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
@@ -14,14 +15,19 @@ export default function Contact() {
     setTimeout(() => setCopied(false), 2000)
   }
 
+  const contactCards = [
+    { icon: 'location_on',  labelKey: 'contact.location_label', value: t('contact.location_value') },
+    { icon: 'phone',        labelKey: 'contact.phone_label',    value: profile.phone },
+    { icon: 'open_in_new',  labelKey: 'contact.linkedin_label', value: "Let's connect", href: profile.linkedin },
+  ]
+
   return (
     <section
       id="contact"
       className="relative overflow-hidden py-28"
       style={{ backgroundColor: 'var(--pink)' }}
     >
-      {/* checker strip top */}
-      <div className="checker-pink w-full h-5 absolute top-0 left-0 opacity-30" />
+      <div className="w-full h-px absolute top-0 left-0" style={{ background: 'rgba(255,255,255,0.15)' }} />
 
       {/* blobs */}
       <div className="absolute blob-1 pointer-events-none" style={{ width: 300, height: 280, backgroundColor: 'rgba(255,255,255,0.08)', top: -80, right: -60 }} />
@@ -44,7 +50,7 @@ export default function Contact() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
         >
-          05 — Contact
+          {t('contact.section_label')}
         </motion.p>
 
         <motion.h2
@@ -54,10 +60,10 @@ export default function Contact() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Let's make
+          {t('contact.heading_1')}
           <br />
-          something{' '}
-          <span style={{ color: 'var(--lime)' }}>great.</span> ✦
+          {t('contact.heading_2')}{' '}
+          <span style={{ color: 'var(--blush)' }}>{t('contact.heading_accent')}</span> ✦
         </motion.h2>
 
         <motion.p
@@ -67,8 +73,7 @@ export default function Contact() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          I'm open to new projects, collabs, and conversations.
-          Write to me — I respond to everything.
+          {t('contact.body')}
         </motion.p>
 
         {/* big email CTA */}
@@ -82,13 +87,13 @@ export default function Contact() {
             href={`mailto:${profile.email}`}
             className="pill-btn pill-btn-lime text-lg px-10 py-4"
           >
-            Send me an email
+            {t('contact.cta_email')}
           </a>
           <button
             onClick={copyEmail}
             className="pill-btn pill-btn-white text-sm"
           >
-            {copied ? '✓ Copied!' : 'Copy email'}
+            {copied ? t('contact.copied') : t('contact.cta_copy')}
           </button>
         </motion.div>
 
@@ -99,20 +104,16 @@ export default function Contact() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          {[
-            { iconType: 'location', label: 'Location', value: 'Colombia · Remote' },
-            { iconType: 'phone', label: 'Phone', value: profile.phone },
-            { iconType: 'link', label: 'LinkedIn', value: "Let's connect", href: profile.linkedin },
-          ].map(({ iconType, label, value, href }) => (
+          {contactCards.map(({ icon, labelKey, value, href }) => (
             <div
-              key={label}
+              key={labelKey}
               className="sticker-card p-4 text-center"
               style={{ backgroundColor: 'rgba(255,255,255,0.95)' }}
             >
-              <div className="flex items-center justify-center mb-1 text-2xl" style={{ color: 'var(--pink)' }}>
-                <ContactIcon type={iconType as any} size={22} color="var(--pink)" />
+              <div className="flex items-center justify-center mb-1" style={{ color: 'var(--pink)' }}>
+                <span className="material-icons-round" style={{ fontSize: 22 }}>{icon}</span>
               </div>
-              <div className="font-mono text-xs mb-1" style={{ color: 'var(--text-muted)' }}>{label}</div>
+              <div className="font-mono text-xs mb-1" style={{ color: 'var(--text-muted)' }}>{t(labelKey)}</div>
               {href ? (
                 <a href={href} target="_blank" rel="noopener noreferrer" className="font-heading font-bold text-sm hover:underline" style={{ color: 'var(--pink)' }}>
                   {value}
@@ -132,12 +133,11 @@ export default function Contact() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.65 }}
         >
-          made with love + coffee in Colombia
+          {t('contact.footer')}
         </motion.p>
       </div>
 
-      {/* checker strip bottom */}
-      <div className="checker-pink w-full h-5 absolute bottom-0 left-0 opacity-30" />
+      <div className="w-full h-px absolute bottom-0 left-0" style={{ background: 'rgba(255,255,255,0.15)' }} />
     </section>
   )
 }

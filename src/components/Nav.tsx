@@ -1,21 +1,25 @@
 import { useState, useEffect } from 'react'
-
-const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Work', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
-]
+import { useTranslation } from 'react-i18next'
 
 export default function Nav() {
+  const { t, i18n } = useTranslation()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+
+  const links = [
+    { label: t('nav.about'),    href: '#about' },
+    { label: t('nav.work'),     href: '#experience' },
+    { label: t('nav.projects'), href: '#projects' },
+    { label: t('nav.contact'),  href: '#contact' },
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const toggleLang = () => i18n.changeLanguage(i18n.language === 'es' ? 'en' : 'es')
 
   return (
     <nav
@@ -51,9 +55,19 @@ export default function Nav() {
               </a>
             </li>
           ))}
+          {/* language toggle */}
+          <li>
+            <button
+              onClick={toggleLang}
+              className="px-3 py-1.5 rounded-full text-xs font-mono font-bold border-2 transition-all duration-200"
+              style={{ borderColor: 'var(--dark)', color: 'var(--dark)', boxShadow: '2px 2px 0 var(--dark)' }}
+            >
+              {i18n.language === 'es' ? 'EN' : 'ES'}
+            </button>
+          </li>
           <li className="ml-2">
             <a href="mailto:rojaszuluagamariana@gmail.com" className="pill-btn pill-btn-pink text-sm" style={{ padding: '8px 20px', fontSize: '0.875rem' }}>
-              Let's talk!
+              {t('nav.cta')}
             </a>
           </li>
         </ul>
@@ -87,8 +101,15 @@ export default function Nav() {
               {label}
             </a>
           ))}
+          <button
+            onClick={toggleLang}
+            className="font-mono text-sm font-bold py-1 text-left"
+            style={{ color: 'var(--text-muted)' }}
+          >
+            {i18n.language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+          </button>
           <a href="mailto:rojaszuluagamariana@gmail.com" className="pill-btn pill-btn-pink mt-2" style={{ alignSelf: 'flex-start' }}>
-            Let's talk!
+            {t('nav.cta')}
           </a>
         </div>
       )}

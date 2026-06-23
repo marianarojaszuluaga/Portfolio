@@ -1,14 +1,15 @@
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { projects, categoryLabels, categoryColors } from '../content'
+import { useTranslation } from 'react-i18next'
+import { projects, categoryColors, categoryIcons } from '../content'
 import type { ProjectCategory, Project } from '../types'
 import ProjectCard from './ProjectCard'
 import ProjectModal from './ProjectModal'
-import { CategoryIcon } from './Icons'
 
-const categories = Object.keys(categoryLabels) as ProjectCategory[]
+const categories = Object.keys(categoryColors) as ProjectCategory[]
 
 export default function Projects() {
+  const { t } = useTranslation()
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('imagine-apps')
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const ref = useRef(null)
@@ -39,10 +40,10 @@ export default function Projects() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
         >
-          03 — Projects
+          {t('projects.section_label')}
         </motion.p>
 
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-6">
           <motion.h2
             className="font-display font-bold leading-none"
             style={{ fontSize: 'clamp(2.8rem, 7vw, 5.5rem)', color: '#fff', letterSpacing: '-0.02em' }}
@@ -50,8 +51,8 @@ export default function Projects() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.55, delay: 0.1 }}
           >
-            What I've{' '}
-            <span style={{ color: 'var(--lime)' }}>built.</span> ✦
+            {t('projects.heading')}{' '}
+            <span style={{ color: 'var(--lime)' }}>{t('projects.heading_accent')}</span> ✦
           </motion.h2>
 
           {/* category filter — pill buttons */}
@@ -63,32 +64,44 @@ export default function Projects() {
           >
             {categories.map((cat) => {
               const isActive = cat === activeCategory
-              const color = categoryColors[cat]
               return (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className="px-4 py-1.5 rounded-full text-xs font-heading font-bold border-2 transition-all duration-200 flex items-center gap-2"
+                  className="px-4 py-1.5 rounded-full text-xs font-heading font-bold border-2 transition-all duration-200 flex items-center gap-1.5"
                   style={{
-                    backgroundColor: isActive ? color : 'transparent',
-                    color: isActive ? (color === 'var(--lime)' || color === 'var(--cyan)' ? 'var(--dark)' : '#fff') : 'rgba(255,255,255,0.9)',
-                    borderColor: isActive ? 'var(--dark)' : 'rgba(255,255,255,0.25)',
-                    boxShadow: isActive ? '2px 2px 0 rgba(0,0,0,0.3)' : 'none',
+                    backgroundColor: isActive ? 'var(--mustard)' : 'transparent',
+                    color: isActive ? 'var(--navy)' : 'rgba(255,255,255,0.85)',
+                    borderColor: isActive ? 'var(--navy)' : 'rgba(255,255,255,0.25)',
+                    boxShadow: isActive ? '2px 2px 0 rgba(0,0,0,0.35)' : 'none',
                     transform: isActive ? 'translate(-1px,-1px)' : 'none',
                   }}
                 >
-                  <CategoryIcon category={cat} size={18} color={isActive ? (color === 'var(--lime)' || color === 'var(--cyan)' ? 'var(--dark)' : '#fff') : 'rgba(255,255,255,0.9)'} />
-                  {categoryLabels[cat]}
+                  <span className="material-icons-round" style={{ fontSize: 15, lineHeight: 1 }}>
+                    {categoryIcons[cat] ?? 'folder'}
+                  </span>
+                  {t(`projects.categories.${cat}`)}
                 </button>
               )
             })}
           </motion.div>
         </div>
 
+        {/* subtitle */}
+        <motion.p
+          className="font-heading text-sm leading-relaxed mb-10 max-w-2xl"
+          style={{ color: 'rgba(255,255,255,0.65)' }}
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.4, delay: 0.3 }}
+        >
+          {t('projects.subtitle')}
+        </motion.p>
+
         {/* grid */}
         {filtered.length === 0 ? (
           <p className="text-center py-16 font-hand text-2xl" style={{ color: 'rgba(255,255,255,0.6)' }}>
-            En camino... ✦ próximamente
+            {t('projects.empty')}
           </p>
         ) : (
           <div className="space-y-4">
