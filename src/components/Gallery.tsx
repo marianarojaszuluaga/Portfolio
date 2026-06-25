@@ -84,7 +84,7 @@ export default function Gallery() {
           initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.4, delay: 0.25 }}
         >
-          <span className="material-icons-round" style={{ fontSize: 20, color: 'var(--accent-1)' }}>calendar_month</span>
+          <span className="material-icons-round" aria-hidden="true" style={{ fontSize: 20, color: 'var(--accent-1)' }}>calendar_month</span>
           <span className="section-label" style={{ letterSpacing: '0.15em' }}>{t('gallery.calendar.title')}</span>
         </motion.div>
 
@@ -120,7 +120,7 @@ export default function Gallery() {
                   style={{ backgroundColor: style.bg }}
                 >
                   <div className="flex items-center gap-2">
-                    <span className="material-icons-round" style={{ fontSize: 18, color: style.text }}>{style.icon}</span>
+                    <span className="material-icons-round" aria-hidden="true" style={{ fontSize: 18, color: style.text }}>{style.icon}</span>
                     <span
                       className="text-xs font-mono font-bold px-2 py-0.5 rounded-full"
                       style={{ backgroundColor: 'rgba(0,0,0,0.15)', color: style.text }}
@@ -155,7 +155,7 @@ export default function Gallery() {
 
         {safeEvents.length === 0 && (
           <p className="text-center py-16 font-hand text-2xl" style={{ color: 'var(--text-muted)' }}>
-            Próximamente... ✦
+            {t('gallery.empty')}
           </p>
         )}
       </div>

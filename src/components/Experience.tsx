@@ -76,7 +76,7 @@ export default function Experience() {
                               className="px-2 py-0.5 rounded-full text-xs font-bold border-2"
                               style={{ backgroundColor: accent, color: '#fff', borderColor: 'var(--dark)', boxShadow: '1px 1px 0 var(--dark)' }}
                             >
-                              Current ✦
+                              {t('experience.current_badge')}
                             </span>
                           )}
                         </div>

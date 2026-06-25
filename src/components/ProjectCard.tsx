@@ -25,6 +25,7 @@ export default function ProjectCard({ project, onClick, index, featured }: Props
       className="sticker-card text-left w-full overflow-hidden cursor-pointer relative group"
       style={{ padding: 0 }}
       onClick={() => onClick(project)}
+      aria-label={t('projects.card_open_aria', { title })}
       initial={{ opacity: 0, y: 24, rotate: index % 2 === 0 ? -0.5 : 0.5 }}
       animate={{ opacity: 1, y: 0, rotate: 0 }}
       transition={{ duration: 0.4, delay: index * 0.07 }}
@@ -39,7 +40,7 @@ export default function ProjectCard({ project, onClick, index, featured }: Props
           className="font-mono text-xs font-bold px-2 py-1 rounded-full border-2 flex items-center gap-1"
           style={{ backgroundColor: color, color: badgeTextColor, borderColor: 'var(--dark)', boxShadow: '1px 1px 0 var(--dark)' }}
         >
-          <span className="material-icons-round" style={{ fontSize: 13, lineHeight: 1 }}>{icon}</span>
+          <span className="material-icons-round" aria-hidden="true" style={{ fontSize: 13, lineHeight: 1 }}>{icon}</span>
           {t(`projects.categories.${project.category}`)}
         </span>
         <span
@@ -94,7 +95,7 @@ export default function ProjectCard({ project, onClick, index, featured }: Props
         <div className="mt-4 pt-3 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-all -translate-y-1 group-hover:translate-y-0 duration-200"
           style={{ borderTop: '1px solid rgba(26,26,26,0.1)' }}
         >
-          <span className="text-xs font-bold font-heading uppercase tracking-widest" style={{ color }}>Open →</span>
+          <span className="text-xs font-bold font-heading uppercase tracking-widest" aria-hidden="true" style={{ color }}>{t('projects.card_open')} →</span>
         </div>
       </div>
     </motion.button>

@@ -5,7 +5,11 @@
     "projects": "Proyectos",
     "contact": "Contacto",
     "cta": "Hablemos",
-    "gallery": "Galeria"
+    "gallery": "Galeria",
+    "lang_toggle": "Cambiar a {{lang}}"
+  },
+  "common": {
+    "close": "Cerrar"
   },
   "hero": {
     "greeting": "¡Hola! — Soy",
@@ -74,6 +78,7 @@
     "heading_accent": "trayectoria.",
     "heading_sub": "¡hasta ahora!",
     "additional_title": "Otros roles",
+    "current_badge": "Actual ✦",
     "items": [
       {
         "role": "Líder Estratégica de Producto & Operaciones",
@@ -107,7 +112,10 @@
     "heading_accent": "construido.",
     "subtitle": "Conoce los proyectos que he construido hasta ahora. Podrás ver lo que he hecho dentro y fuera de mi trabajo. También lo que he intentado — revisa mi Galería de Intentos.",
     "empty": "En camino... ✦ próximamente",
+    "card_open": "Ver",
+    "card_open_aria": "Abrir proyecto: {{title}}",
     "modal_problem": "El problema",
+    "modal_close_aria": "Cerrar detalles del proyecto",
     "modal_built": "Lo que construí",
     "modal_impact": "El impacto",
     "modal_stack": "Stack",
@@ -265,9 +273,11 @@
     "location_value": "Colombia · Remoto",
     "phone_label": "Teléfono",
     "linkedin_label": "LinkedIn",
+    "linkedin_cta": "Conectémonos",
     "footer": "hecho con amor + café en Colombia"
   },
   "gallery": {
+    "empty": "Próximamente... ✦",
     "section_label": "06 — Galeria",
     "heading_1": "Chismosea",
     "heading_2": "Mira las ultimas",

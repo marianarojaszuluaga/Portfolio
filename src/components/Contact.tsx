@@ -18,7 +18,7 @@ export default function Contact() {
   const contactCards = [
     { icon: 'location_on',  labelKey: 'contact.location_label', value: t('contact.location_value') },
     { icon: 'phone',        labelKey: 'contact.phone_label',    value: profile.phone },
-    { icon: 'open_in_new',  labelKey: 'contact.linkedin_label', value: "Let's connect", href: profile.linkedin },
+    { icon: 'open_in_new',  labelKey: 'contact.linkedin_label', value: t('contact.linkedin_cta'), href: profile.linkedin },
   ]
 
   return (
@@ -91,6 +91,7 @@ export default function Contact() {
           </a>
           <button
             onClick={copyEmail}
+            aria-label={copied ? t('contact.copied') : t('contact.cta_copy')}
             className="pill-btn pill-btn-white text-sm"
           >
             {copied ? t('contact.copied') : t('contact.cta_copy')}
@@ -111,11 +112,11 @@ export default function Contact() {
               style={{ backgroundColor: 'rgba(255,255,255,0.95)' }}
             >
               <div className="flex items-center justify-center mb-1" style={{ color: 'var(--pink)' }}>
-                <span className="material-icons-round" style={{ fontSize: 22 }}>{icon}</span>
+                <span className="material-icons-round" aria-hidden="true" style={{ fontSize: 22 }}>{icon}</span>
               </div>
               <div className="font-mono text-xs mb-1" style={{ color: 'var(--text-muted)' }}>{t(labelKey)}</div>
               {href ? (
-                <a href={href} target="_blank" rel="noopener noreferrer" className="font-heading font-bold text-sm hover:underline" style={{ color: 'var(--pink)' }}>
+                <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`${t(labelKey)} — ${value}`} className="font-heading font-bold text-sm hover:underline" style={{ color: 'var(--pink)' }}>
                   {value}
                 </a>
               ) : (

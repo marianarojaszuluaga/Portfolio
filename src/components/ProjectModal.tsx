@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { Project } from '../types'
 import { categoryColors, categoryIcons } from '../content'
@@ -11,12 +11,19 @@ interface Props {
 
 export default function ProjectModal({ project, onClose }: Props) {
   const { t } = useTranslation()
+  const closeRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose()
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [onClose])
+
+  useEffect(() => {
+    if (project) {
+      setTimeout(() => closeRef.current?.focus(), 50)
+    }
+  }, [project])
 
   return (
     <AnimatePresence>
@@ -30,6 +37,9 @@ export default function ProjectModal({ project, onClose }: Props) {
             onClick={onClose}
           />
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
             className="fixed bottom-0 left-0 right-0 z-50 rounded-t-2xl p-8 max-h-[85vh] overflow-y-auto md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:rounded-2xl md:max-w-2xl md:w-full"
             style={{ backgroundColor: 'var(--surface)' }}
             initial={{ y: '100%' }}
@@ -37,18 +47,25 @@ export default function ProjectModal({ project, onClose }: Props) {
             exit={{ y: '100%' }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
           >
-            <button onClick={onClose} className="absolute top-4 right-4 text-text-muted hover:text-text transition-colors text-xl">✕</button>
+            <button
+              ref={closeRef}
+              onClick={onClose}
+              aria-label={t('projects.modal_close_aria')}
+              className="absolute top-4 right-4 text-text-muted hover:text-text transition-colors text-xl"
+            >
+              <span aria-hidden="true">✕</span>
+            </button>
             <div className="flex items-center gap-2 mb-4">
               <span
                 className="text-xs font-mono px-2 py-0.5 rounded-full flex items-center gap-1"
                 style={{ backgroundColor: `${categoryColors[project.category]}22`, color: categoryColors[project.category] }}
               >
-                <span className="material-icons-round" style={{ fontSize: 12, lineHeight: 1 }}>{categoryIcons[project.category] ?? 'folder'}</span>
+                <span className="material-icons-round" aria-hidden="true" style={{ fontSize: 12, lineHeight: 1 }}>{categoryIcons[project.category] ?? 'folder'}</span>
                 {t(`projects.categories.${project.category}`)}
               </span>
               <span className="text-text-muted text-xs">{project.period}</span>
             </div>
-            <h2 className="font-heading font-bold text-2xl text-text mb-6">
+            <h2 id="modal-title" className="font-heading font-bold text-2xl text-text mb-6">
               {t(`projects.items.${project.id}.title`, { defaultValue: project.title })}
             </h2>
 

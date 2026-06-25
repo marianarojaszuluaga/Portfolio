@@ -35,6 +35,7 @@ export default function Nav() {
         {/* logo */}
         <a
           href="#hero"
+          aria-label="Mariana Rojas — go to top"
           className="font-display font-bold text-2xl select-none"
           style={{ color: 'var(--pink)', letterSpacing: '-0.01em' }}
         >
@@ -60,6 +61,7 @@ export default function Nav() {
           <li>
             <button
               onClick={toggleLang}
+              aria-label={i18n.language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
               className="px-3 py-1.5 rounded-full text-xs font-mono font-bold border-2 transition-all duration-200"
               style={{ borderColor: 'var(--dark)', color: 'var(--dark)', boxShadow: '2px 2px 0 var(--dark)' }}
             >
@@ -78,6 +80,8 @@ export default function Nav() {
           className="md:hidden flex flex-col gap-1.5 p-2"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
         >
           <span className={`block h-0.5 w-5 transition-all origin-center ${open ? 'rotate-45 translate-y-2' : ''}`} style={{ backgroundColor: 'var(--dark)' }} />
           <span className={`block h-0.5 w-5 transition-all ${open ? 'opacity-0 scale-x-0' : ''}`} style={{ backgroundColor: 'var(--dark)' }} />
@@ -88,6 +92,7 @@ export default function Nav() {
       {/* mobile menu */}
       {open && (
         <div
+          id="mobile-menu"
           className="md:hidden px-6 pb-6 flex flex-col gap-3"
           style={{ backgroundColor: 'var(--cream)', borderTop: '2px solid var(--dark)' }}
         >

@@ -4,7 +4,12 @@
     "work": "Work",
     "projects": "Projects",
     "contact": "Contact",
-    "cta": "Let's talk"
+    "cta": "Let's talk",
+    "gallery": "Gallery",
+    "lang_toggle": "Switch to {{lang}}"
+  },
+  "common": {
+    "close": "Close"
   },
   "hero": {
     "greeting": "Hi there! — I'm",
@@ -60,6 +65,7 @@
     "heading_accent": "journey.",
     "heading_sub": "so far!",
     "additional_title": "More roles",
+    "current_badge": "Current ✦",
     "items": [
       {
         "role": "Strategic Product & Operations Lead",
@@ -93,10 +99,13 @@
     "heading_accent": "built.",
     "subtitle": "Get to know the projects I've built so far. You'll be able to see what I've done inside and outside my job. Also, what I've tried — check out my Attempts Gallery.",
     "empty": "Coming soon... ✦ stay tuned",
+    "card_open": "View",
+    "card_open_aria": "Open project: {{title}}",
     "modal_problem": "The problem",
     "modal_built": "What I built",
     "modal_impact": "The impact",
     "modal_stack": "Stack",
+    "modal_close_aria": "Close project details",
     "categories": {
       "imagine-apps": "Imagine Apps",
       "ia": "AI",
@@ -225,6 +234,19 @@
     "location_value": "Colombia · Remote",
     "phone_label": "Phone",
     "linkedin_label": "LinkedIn",
-    "footer": "✓ passes accesibility | was made with love and coffee in Colombia"
+    "linkedin_cta": "Let's connect",
+    "footer": "✓ passes accessibility | made with love and coffee in Colombia"
+  },
+  "gallery": {
+    "section_label": "06 — Gallery",
+    "heading_1": "Check out",
+    "heading_accent": "my journey",
+    "body": "I love attending events, learning, sharing what I build, and creating community around who I am and what I enjoy doing.",
+    "empty": "Coming soon... ✦",
+    "calendar": {
+      "title": "Upcoming events",
+      "body": "Events I'm attending or watching — by interest area",
+      "items": []
+    }
   }
 }
