@@ -245,6 +245,25 @@ export const projects: Project[] = [
       'Trayectoria de PM a Strategic Lead con base en decisiones deliberadas, no en oportunidades accidentales. Un sistema propio de crecimiento que sigue activo.',
     stack: ['Desarrollo Profesional', 'Mentoría', 'Planificación Estratégica'],
   },
+  {
+    id: 'pizza-day',
+    title: 'PIZZA DAY — Experiencia de pizza artesanal',
+    category: 'emprendimiento',
+    period: '2022 – 2023',
+    problem:
+      'A la gente le encanta una noche de pizza y organizarla puede ser una de las mejores experiencias. Un grupo de amigos, una empresa o una pareja puede planear esta cita y solo pensar en los ingredientes que quieren en su pizza, lo demás ya está listo y llega a su puerta.',
+    built:
+      'Desarrollé una pizza de fermentación baja y larga con un buen sabor y una textura fuerte que soporta incluso la piña. También cuenta con un buen queso y una salsa superior que combina con cualquier sabor; los clientes tendrán todo esto con un horno de pizza profesional.',
+    impact:
+      'Transforma la experiencia de una noche de pizza de una llamada de 30 minutos a Domino\'s a una espera inolvidable de 2 minutos mientras el queso se derrite y la masa se pone crujiente.',
+    stack: ['Food Design', 'Emprendimiento', 'Experiencia de Cliente'],
+    images: [
+      '/pizza-day-1.jpg',
+      '/pizza-day-2.jpg',
+      '/pizza-day-3.jpg',
+      '/pizza-day-4.jpg',
+    ],
+  },
 ]
 
 export const education: Education[] = [

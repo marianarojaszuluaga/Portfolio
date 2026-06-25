@@ -464,6 +464,20 @@ built = Personal and professional development plan with upskilling priorities an
 impact = Trajectory from PM to Strategic Lead based on deliberate decisions, not accidental opportunities. An own growth system that remains active.
 
 ---
+## PROJECT_ "PIZZA DAY" 
+
+[ES]
+title = PIZZA DAY es una experiencia para tener un día de pizza todos los días
+problem = A la gente le encanta una noche de pizza y organizar una puede ser una de las mejores experiencias. Un grupo de amigos, una empresa o una pareja puede planear esta cita y solo pensar en los ingredientes que quieren en su pizza, lo demás ya está listo y llega a su puerta.
+built = Desarrollé una pizza de fermentación baja y larga con un buen sabor y una textura fuerte que soporta incluso la piña. También cuenta con un buen queso y una salsa superior que combina con cualquier sabor; los clientes tendrán todo esto con un horno de pizza profesional.
+impact = ransforma la experiencia de una noche de pizza de una llamada de 30 minutos a Domino's a una espera inolvidable de 2 minutos mientras el queso se derrite y la masa se pone crujiente.
+
+[EN]
+title = "PIZZA DAY" an experience to have a Pizza day everiday
+problem = People love a pizza nigth and housting one can be one of the best experiences ever. One group of friend, a company or a cuple can plan this datea and only think about the tippins they want on their pizza, the rest is done and at their dore step. 
+built = I developed a low and long fermented pizza with the a nice taste and strong tesxture to support even pinapple. Also count in a good cheese, and superior sause that coes well with any flaivour; the customers, will have all of this with a professional pizza oven.
+impact = Transforms a pizza nigth experience from a 30 minute call to cominoes to an unforgetable 2 minutes wait time while the chesse melts and the crust gets crunchy. 
+---
 
 ## EDUCATION
 
@@ -618,6 +632,7 @@ galery_category= Calendar
 title= Semana del Emprendimiento Femenino
 brief= Semana global de emprendimiento femenino con eventos en más de 100 países, accesible virtualmente desde Colombia
 date= Noviembre 2026
+category= Género
 galery_category= Calendar
 
 ---
@@ -634,6 +649,7 @@ galery_category= Calendar
 title= Lean In Summit
 brief= Conferencia de liderazgo femenino y equidad de género en el trabajo, completamente virtual y accesible desde Colombia
 date= Octubre 2026
+category= Género
 galery_category= Calendar
 
 ---
@@ -650,6 +666,7 @@ galery_category= Calendar
 title= Cumbre de Mujeres en Innovación
 brief= Cumbre centrada en mujeres innovadoras en ciencia, tecnología y negocios, en formato virtual
 date= 12 de agosto, 2026
+category= Género
 galery_category= Calendar
 
 ---
@@ -666,4 +683,5 @@ galery_category= Calendar
 title= Foro LeadersIn de Innovación
 brief= Foro virtual de cierre de año sobre tendencias de innovación y perspectivas estratégicas para el siguiente ejercicio
 date= Diciembre 2026
+category= Innovación
 galery_category= Calendar

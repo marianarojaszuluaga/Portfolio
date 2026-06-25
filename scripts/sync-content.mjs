@@ -27,8 +27,10 @@ function parseSections(content) {
     const name = part.slice(0, firstLine).trim()
     const body = part.slice(firstLine + 1)
 
-    const esMatch = body.match(/\[ES\]([\s\S]*?)(?=\[EN\]|$)/)
-    const enMatch = body.match(/\[EN\]([\s\S]*)$/)
+    const esMatch = body.match(/\[ES\]([\s\S]*?)(?=\[EN\]|---)/)
+      ?? body.match(/\[ES\]([\s\S]*)$/)
+    const enMatch = body.match(/\[EN\]([\s\S]*?)(?=\[ES\]|---)/)
+      ?? body.match(/\[EN\]([\s\S]*)$/)
 
     sections[name] = {
       es: esMatch ? parseKeyValues(esMatch[1]) : {},
@@ -48,11 +50,10 @@ function parseKeyValues(block) {
   for (const raw of block.split('\n')) {
     const line = raw.trim()
     if (!line || line.startsWith('---')) continue
-    const eq = line.indexOf(' = ')
-    if (eq === -1) continue
-    const key = line.slice(0, eq).trim()
-    const value = line.slice(eq + 3).trim()
-    result[key] = value
+    // accepts: key = value  |  key= value  |  key=value  |  key: value
+    const match = line.match(/^([a-zA-Z_\d]+)\s*[=:]\s*(.+)/)
+    if (!match) continue
+    result[match[1].toLowerCase()] = match[2].trim()
   }
   return result
 }

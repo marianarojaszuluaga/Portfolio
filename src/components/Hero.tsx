@@ -9,10 +9,10 @@ const Sparkle = ({ size = 24, color = 'var(--pink)', style = {} }: { size?: numb
 )
 
 const stickerDefs = [
-  { icon: 'calendar_month',  color: 'var(--lime)',   textColor: 'var(--dark)', rotate: '-6deg', pos: { top: '8%', left: '2%' },    textKey: 'hero.sticker_years_text',    subKey: 'hero.sticker_years_sub' },
-  { icon: 'location_on',     color: 'var(--pink)',   textColor: '#fff',        rotate: '4deg',  pos: { top: '18%', right: '2%' },   textKey: 'hero.sticker_location_text', subKey: 'hero.sticker_location_sub' },
-  { icon: 'pets',            color: '#fff',          textColor: 'var(--dark)', rotate: '-3deg', pos: { bottom: '32%', right: '3%' },textKey: 'hero.sticker_dog_text',      subKey: 'hero.sticker_dog_sub' },
-  { icon: 'directions_bike', color: 'var(--cyan)',   textColor: 'var(--dark)', rotate: '5deg',  pos: { bottom: '38%', left: '1%' }, textKey: 'hero.sticker_ride_text',     subKey: 'hero.sticker_ride_sub' },
+  { icon: 'calendar_month',  color: 'var(--lime)',   textColor: 'var(--dark)', rotate: '-6deg', pos: { top: '2%',   left: '-18%'  }, textKey: 'hero.sticker_years_text',    subKey: 'hero.sticker_years_sub' },
+  { icon: 'location_on',     color: 'var(--pink)',   textColor: '#fff',        rotate: '4deg',  pos: { top: '10%',  right: '-22%' }, textKey: 'hero.sticker_location_text', subKey: 'hero.sticker_location_sub' },
+  { icon: 'directions_bike', color: 'var(--cyan)',   textColor: 'var(--dark)', rotate: '-4deg', pos: { bottom: '22%', left: '-20%'}, textKey: 'hero.sticker_ride_text',     subKey: 'hero.sticker_ride_sub' },
+  { icon: 'pets',            color: '#fff',          textColor: 'var(--dark)', rotate: '5deg',  pos: { bottom: '14%', right: '-18%'},textKey: 'hero.sticker_dog_text',      subKey: 'hero.sticker_dog_sub' },
 ]
 
 export default function Hero() {
@@ -120,7 +120,8 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.65, delay: 0.2 }}
           >
-            <div className="relative" style={{ width: 340, height: 400 }}>
+            {/* outer wrapper gives overflow room for stickers */}
+            <div className="relative" style={{ width: 340, height: 400, margin: '0 80px' }}>
               {/* orange color block behind */}
               <div
                 className="absolute blob-3"
@@ -148,18 +149,18 @@ export default function Hero() {
                 />
               </div>
 
-              {/* floating sticker cards */}
+              {/* floating sticker cards — hidden on small screens, shown md+ */}
               {stickerDefs.map((s, i) => (
                 <motion.div
                   key={i}
-                  className="absolute px-3 py-2 rounded-xl border-2"
+                  className="hidden md:block absolute px-3 py-2 rounded-xl border-2"
                   style={{
                     ...s.pos,
                     backgroundColor: s.color,
                     borderColor: 'var(--dark)',
                     boxShadow: '3px 3px 0 var(--dark)',
                     rotate: s.rotate,
-                    minWidth: 80,
+                    minWidth: 110,
                     textAlign: 'center',
                     zIndex: 10,
                   }}

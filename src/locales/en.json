@@ -4,8 +4,7 @@
     "work": "Work",
     "projects": "Projects",
     "contact": "Contact",
-    "cta": "Let's talk",
-    "gallery": "Gallery"
+    "cta": "Let's talk"
   },
   "hero": {
     "greeting": "Hi there! — I'm",
@@ -25,8 +24,7 @@
   "about": {
     "section_label": "01 — About me",
     "heading": "Hi, I'm Mar.",
-    "subtitle": "¡the one!",
-    "bio_p1": "Hi! They call me Mar.",
+    "bio_p1": "¡Hola! They call me Mar.",
     "bio_p2": "Political Science graduate, passionate about technology and the human problems hiding inside everyday operations. I have two girl dogs who are the best part of my life.",
     "bio_p3": "I'm an operator who thinks strategically. For 5+ years I've owned product and operational initiatives end-to-end — from the first conversation to the system running in production. My job is reducing ambiguity, creating alignment, and turning ideas into something teams can actually run on.",
     "bio_p4": "I care about people, and I show that through structure and clarity, not slogans.",
@@ -52,21 +50,9 @@
     "Digital Transformation"
   ],
   "languages_list": [
-    {
-      "lang": "English",
-      "code": "gb",
-      "level": "C2 Advanced / Native"
-    },
-    {
-      "lang": "Spanish",
-      "code": "co",
-      "level": "Native (mother tongue)"
-    },
-    {
-      "lang": "French",
-      "code": "fr",
-      "level": "Intermediate"
-    }
+    { "lang": "English", "code": "gb", "level": "C2 Advanced / Native" },
+    { "lang": "Spanish", "code": "co", "level": "Native (mother tongue)" },
+    { "lang": "French", "code": "fr", "level": "Intermediate" }
   ],
   "experience": {
     "section_label": "02 — Where I've worked",
@@ -123,7 +109,7 @@
         "title": "Agent Hub — Friction Reduction AI Agent Interface",
         "problem": "The bottleneck wasn't building AI agents — it was that non-technical users couldn't access them without friction. The technology existed; the human interface didn't.",
         "built": "Defined the product vision, built and curated 10+ agents, and designed an interface that eliminates access friction for non-technical users. Led the full backlog and took the project to external pitch.",
-        "impact": "From internal tool to a commercially viable proposal. Agent Hub shifted the conversation from \"we have agents\" to \"anyone can use them\"."
+        "impact": "From internal tool to a commercially viable proposal. Agent Hub shifted the conversation from 'we have agents' to 'anyone can use them'."
       },
       "imagine-apps-ecosystem": {
         "title": "Imagine Apps Ecosystem — Internal Knowledge System",
@@ -132,7 +118,7 @@
         "impact": "The company stopped depending on specific people to function. Knowledge became transferable, scalable, and auditable."
       },
       "finanz-butik-helpdesk": {
-        "title": "Finanz Butik Helpdesk - Real time request",
+        "title": "Finanz Butik Helpdesk",
         "problem": "The team managed scattered requests without traceability, causing lost tickets, unclear priorities, and fragmented communication.",
         "built": "Centralized hub with guided 6-step form, automatic ticket classification with confidence scoring and unique nomenclature. Direct Basecamp integration. Full Kanban with RBAC.",
         "impact": "System deployed in production with beta users processing real tickets. Eliminated request scattering and created complete lifecycle traceability."
@@ -184,36 +170,6 @@
         "problem": "Professional growth without structure becomes reactivity — you learn what's urgent, not what's strategic. Without a roadmap, you go in circles.",
         "built": "Personal and professional development plan with upskilling priorities and career trajectory, built with professional mentorship. Includes skills map, cycle objectives, and progress metrics.",
         "impact": "Trajectory from PM to Strategic Lead based on deliberate decisions, not accidental opportunities. An own growth system that remains active."
-      },
-      "gena": {
-        "title": "Gena — Business-Impact Signal Generator",
-        "problem": "Raw client feedback reached the backlog without strategic filtering, mixing real urgencies with noise and leading to reactive prioritization decisions that wasted team capacity.",
-        "built": "Agent that transforms raw feedback — WhatsApp messages, tickets, meeting notes — into impact signals classified by urgency and tied to active business objectives. Only signals with demonstrable impact pass to the backlog.",
-        "impact": "Reduced backlog noise and accelerated the product team's decision velocity. PMs prioritize with strategic criteria in minutes, not days of clarification."
-      },
-      "Gabi": {
-        "title": "Gabi — Agentic Technical Work Planner",
-        "problem": "Turning a User Story into a detailed technical work plan required manual estimation sessions with high variability depending on who was planning, with no guarantee of TDD coverage or SOLID principles.",
-        "built": "Agent that takes a User Story from Gimena and produces a full Work Plan: testing strategy (TDD), SOLID principles application, implementation phases, time estimates with confidence levels, and risk assessment.",
-        "impact": "Reduced planning time per User Story and standardized work plan quality. Developers start work with a clear roadmap from the first test to final integration."
-      },
-      "Ginna": {
-        "title": "Gabriela — Project Brain",
-        "problem": "Strategic and operational project knowledge was scattered across documents, emails, and team memory, with no centralized source of truth for agents to consult.",
-        "built": "Project Brain template that centralizes strategic context, business rules, stakeholders, scope, and decisions as the source of truth for the entire agent orchestration. Includes a change log system to maintain alignment through scope changes.",
-        "impact": "Agents make business-aligned decisions from the first prompt. Eliminates team misalignment and drastically reduces manual clarifications during the delivery cycle."
-      },
-      "Grase": {
-        "title": "QA Integrator — API Contract Validator",
-        "problem": "API validation against OpenAPI/Swagger contracts, security, and performance testing was done manually and inconsistently across deliveries, generating regressions and lack of traceability.",
-        "built": "Specialized API QA agent that runs contract validation, E2E API tests, integration tests, performance, and security testing. Generates structured reports with go/no-go decisions and traceable evidence per delivery.",
-        "impact": "Standardized the API QA process across all projects, reducing production regressions and accelerating delivery cycles with auditable evidence."
-      },
-      "Goldy": {
-        "title": "Unit Test Standards Reviewer — Test Standards Auditor",
-        "problem": "Unit test quality varied significantly across developers: insufficient coverage, weak assertions, and ignored edge cases went unnoticed until production.",
-        "built": "Agent that audits unit tests against defined standards: naming conventions, minimum 80% coverage, isolation, assertion quality, edge case coverage, and proper mock usage. Generates an actionable compliance report with prioritized findings.",
-        "impact": "Raised the baseline unit test quality across the team and reduced regressions in critical features like authentication and error handling."
       }
     }
   },
@@ -226,22 +182,32 @@
     "items": [
       {
         "title": "Post Graduate — Internal Communication & Strategic Management",
+        "institution": "Pontificia Universidad Javeriana",
+        "period": "Jun 2014 → May 2019",
         "relevance": "Strategic communication, organizational culture, leadership communication frameworks."
       },
       {
         "title": "Post Graduate — Professional Project Manager",
+        "institution": "AMG",
+        "period": "May 2026 → Jun 2026",
         "relevance": "Advanced project management methodologies and professional certification."
       },
       {
         "title": "Master in Marketing and Political Communication",
+        "institution": "Universidad de Alcalá de Henares",
+        "period": "Sep 2019 → Jun 2020",
         "relevance": "Political communication strategies, marketing frameworks, and stakeholder engagement."
       },
       {
         "title": "Postgraduate in Political Marketing and Communication",
+        "institution": "Universidad del Rosario",
+        "period": "May 2018 → Jun 2018",
         "relevance": "Specialized training in political marketing and communication strategy."
       },
       {
         "title": "Bachelor's in Political Science",
+        "institution": "Pontificia Universidad Javeriana",
+        "period": "Jun 2014 → May 2019",
         "relevance": "Foundation in political theory, public policy, governance, and social systems."
       }
     ]
@@ -259,22 +225,6 @@
     "location_value": "Colombia · Remote",
     "phone_label": "Phone",
     "linkedin_label": "LinkedIn",
-    "footer": "made with love + coffee in Colombia"
-  },
-  "gallery": {
-    "section_label": "06 — Gallery",
-    "heading_1": "Sneek pic",
-    "heading_2": "Look at my latest",
-    "heading_accent": "Updates.",
-    "body": "I love to go to events, share new build, and create community arround who i am and what i love to do.",
-    "calendar": {
-      "heading_1": "See you there",
-      "items": [
-        {},
-        {},
-        {},
-        {}
-      ]
-    }
+    "footer": "✓ passes accesibility | was made with love and coffee in Colombia"
   }
 }

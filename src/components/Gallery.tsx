@@ -7,6 +7,7 @@ interface GalleryEvent {
   brief: string
   date: string
   category?: string
+  Category?: string
 }
 
 const categoryColors: Record<string, { bg: string; text: string; icon: string }> = {
@@ -99,7 +100,7 @@ export default function Gallery() {
         {/* Events grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5">
           {safeEvents.map((event, i) => {
-            const cat = event.category ?? ''
+            const cat = event.category ?? event.Category ?? ''
             const style = categoryColors[cat] ?? defaultCat
             const { month, rest } = parseDate(event.date ?? '')
 

@@ -214,6 +214,12 @@
         "problem": "La calidad de los unit tests variaba significativamente entre desarrolladores: cobertura insuficiente, aserciones débiles y edge cases ignorados pasaban desapercibidos hasta producción.",
         "built": "Agente que audita unit tests contra estándares definidos: naming, cobertura mínima del 80%, aislamiento, calidad de aserciones, cobertura de edge cases y uso correcto de mocks. Genera un reporte de cumplimiento accionable con hallazgos priorizados.",
         "impact": "Elevó la calidad base de los unit tests en el equipo y redujo regresiones en funcionalidades críticas como autenticación y manejo de errores."
+      },
+      " \"PIZZA DAY\"": {
+        "title": "Dashboard de Evolución Operacional",
+        "problem": "La gestión de proyectos dependía de actualizaciones verbales. Sin métricas, las decisiones de priorización eran subjetivas y la visibilidad de stakeholders era casi nula.",
+        "built": "Dashboard operacional que transforma reportes verbales en métricas medibles: probabilidad de completitud, solicitudes por área, mínimos de reporte por proyecto y persona.",
+        "impact": "Nueva fuente única de verdad para estados globales. Habilitó alineación de prioridades transparente con stakeholders basada en datos históricos."
       }
     }
   },
@@ -270,11 +276,37 @@
     "calendar": {
       "heading_1": "nos vemos alla",
       "items": [
-        {},
-        {},
-        {},
-        {}
-      ]
+        {
+          "title": "Semana del Emprendimiento Femenino",
+          "brief": "Semana global de emprendimiento femenino con eventos en más de 100 países, accesible virtualmente desde Colombia",
+          "date": "Noviembre 2026",
+          "category": "Género",
+          "galery_category": "Calendar"
+        },
+        {
+          "title": "Lean In Summit",
+          "brief": "Conferencia de liderazgo femenino y equidad de género en el trabajo, completamente virtual y accesible desde Colombia",
+          "date": "Octubre 2026",
+          "category": "Género",
+          "galery_category": "Calendar"
+        },
+        {
+          "title": "Cumbre de Mujeres en Innovación",
+          "brief": "Cumbre centrada en mujeres innovadoras en ciencia, tecnología y negocios, en formato virtual",
+          "date": "12 de agosto, 2026",
+          "category": "Género",
+          "galery_category": "Calendar"
+        },
+        {
+          "title": "Foro LeadersIn de Innovación",
+          "brief": "Foro virtual de cierre de año sobre tendencias de innovación y perspectivas estratégicas para el siguiente ejercicio",
+          "date": "Diciembre 2026",
+          "category": "Innovación",
+          "galery_category": "Calendar"
+        }
+      ],
+      "title": "Próximos eventos",
+      "body": "Conoce los eventos más top a los que puedes asistir según tu interes"
     }
   }
 }

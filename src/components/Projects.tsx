@@ -112,12 +112,19 @@ export default function Projects() {
               index={0}
               featured
             />
-            {/* rest */}
+            {/* rest — horizontal scroll */}
             {filtered.length > 1 && (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {filtered.slice(1).map((p, i) => (
-                  <ProjectCard key={p.id} project={p} onClick={setSelectedProject} index={i + 1} />
-                ))}
+              <div
+                className="-mx-6 px-6"
+                style={{ overflowX: 'auto', scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}
+              >
+                <div className="flex gap-4 pb-3" style={{ width: 'max-content' }}>
+                  {filtered.slice(1).map((p, i) => (
+                    <div key={p.id} style={{ width: 300, flexShrink: 0, scrollSnapAlign: 'start' }}>
+                      <ProjectCard project={p} onClick={setSelectedProject} index={i + 1} />
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
           </div>
